@@ -10,6 +10,8 @@
    ui = auto
 [alias]
    co = checkout
+   p = push
+   pl = pull
    ci = commit
    di = diff
    dc = diff --cached
