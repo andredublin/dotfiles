@@ -8,7 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="gnzh"
 
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vi ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
@@ -58,6 +58,7 @@ alias pg='psql'
 alias redis='redis-server /usr/local/etc/redis.conf'
 
 # PATH Settings
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 
 # Android platform tools
 export PATH=${PATH}:Android/tools:Android/platform-tools
