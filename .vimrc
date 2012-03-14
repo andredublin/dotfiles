@@ -217,8 +217,6 @@ noremap k gj
 noremap l gk
 noremap ; l
 
-set showmatch " show matching brackets
-
 " print empty <a> tag
 map! ;h <a href=""></a><ESC>5hi
 
