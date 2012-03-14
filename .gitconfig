@@ -18,4 +18,3 @@
    amend = commit --amend
    aa = add --all
    fa = fetch --all
-   pom = push origin master
