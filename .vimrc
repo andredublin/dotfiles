@@ -1,4 +1,5 @@
 ".vimrc file by Andre Dublin
+"http://andredublin.com
 "Forget compatibility with Vi. Who cares.
 set nocompatible
 
@@ -24,7 +25,7 @@ set expandtab
 set shiftwidth=3
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
-set guifont=Monaco:h14
+set guifont=Monaco:h12
 
 "Indent Stuff
 set smartindent
@@ -91,33 +92,23 @@ filetype plugin on
 filetype indent on
 syntax on
 
-set foldenable "auto fold code
+"auto fold code
+set foldenable
 "Shortcut to fold tags with leader (usually \) + ft
 nnoremap <leader>ft Vatzf
-
-"Set up an HTML5 template for all new .html files
-autocmd BufNewFile * silent! Or $VIMHOME/templates/%:e.tpl
-
-"Load the current buffer in Firefox 
-abbrev ff :! open -a Firefox.app %:p<cr>
-"Load the current buffer in Chrome
-abbrev ch :! open -a Chrome.app %:p<cr>
-"Load the current buffer in Safari
-abbrev ss :! open -a Safari.app %:p<cr>
-"Load the current buffer in Opera
-abbrev op :! open -a Opera.app %:p<cr>
+highlight Folded guibg=grey guifg=blue
+highlight FoldColumn guibg=darkgrey guifg=white
 
 "Map directorys
 nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
 nmap <leader>s :cd ~/Sites<cr>:e.<cr>
-nmap <leader>r :cd ~/Sites/repo<cr>:e.<cr>
 nmap <leader>h :cd ~/<cr>:e.<cr>
 
 "Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 
 "Shortcut for logging into my server
-nmap <leader>server :Nread editme<cr>
+nmap <leader>server :Nread [ftpinfo]<cr>
 
 "Change zen coding expand key to Ctrl + e
 let g:user_zen_expandabbr_key = '<C-e>'
@@ -193,16 +184,12 @@ autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 "Helpeful abbreviations
-
 iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 iab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
 "Spelling corrects. Just for example. Add yours below.
 iab teh the
 iab Teh The
-
-" Alphabetically sort CSS properties in file with :SortCSS
-:command! SortCSS :g#\({\n\)\@<=#.,/}/sort
 
 " Shortcut to opening a virtual split to right of current pane
 " Makes more sense than opening to the left
@@ -223,9 +210,6 @@ noremap k gj
 noremap l gk
 noremap ; l
 
-" print empty <a> tag
-map! ;h <a href=""></a><ESC>5hi
-
+"Syntax files
+au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-
-autocmd BufNewFile,BufRead *.rb source ~/.vim/scripts/rubysnippets.vim
