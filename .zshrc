@@ -57,9 +57,6 @@ alias pgctl='pg_ctl --help'
 alias pg='psql'
 alias redis='redis-server /usr/local/etc/redis.conf'
 
-# PATH Settings
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-
 # Android platform tools
 export PATH=${PATH}:Android/tools:Android/platform-tools
 
