@@ -74,7 +74,13 @@ set dictionary+=/Users/andredublin/.vim/dict.txt
 
 "Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
-set splitbelow "Split windows BELOW the current window!
+"Split windows BELOW the current window!
+set splitbelow
+"Walking through windows and make them fullscreen at the same time
+map <Up> <c-w>k<c-w>_<c-w><Bar>
+map <Down> <c-w>j<c-w>_<c-w><Bar>
+map <Left> <c-w>h<c-w>_<c-w><Bar>
+map <Right> <c-w>l<c-w>_<c-w><Bar>
 
 " session settings
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
