@@ -48,13 +48,15 @@ alias lp='ls -p'
 alias vim=vi
 alias ex=exit
 alias cl=clear
-alias mysql='/Applications/MAMP/Library/bin/mysql -uroot -proot'
 alias server='ssh editme'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pgrestart='pg_ctl restart'
 alias pgctl='pg_ctl --help'
 alias pg='psql'
+alias mystart='mysql.server start'
+alias mystop='mysql.server stop'
+alias myrestart='mysql.server restart'
 alias redis='redis-server /usr/local/etc/redis.conf'
 
 # Android platform tools
