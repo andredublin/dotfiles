@@ -58,6 +58,9 @@ alias mystart='mysql.server start'
 alias mystop='mysql.server stop'
 alias myrestart='mysql.server restart'
 alias redis='redis-server /usr/local/etc/redis.conf'
+alias apstart='sudo apachectl start'
+alias apstop='sudo apachectl stop'
+alias aprestart='sudo apachectl graceful'
 
 # Android platform tools
 export PATH=${PATH}:Android/tools:Android/platform-tools
