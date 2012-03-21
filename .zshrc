@@ -67,3 +67,6 @@ export PATH=${PATH}:Android/tools:Android/platform-tools
 
 # RVM
 [[ -s "/Users/andredublin/.rvm/scripts/rvm" ]] && source "/Users/andredublin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Python 2.7
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
