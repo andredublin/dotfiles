@@ -41,10 +41,16 @@ alias home='cd ~'
 alias ren=mv
 alias up='cd ..'
 alias r='rails'
-alias l='ls'
-alias la='ls -a'
-alias ll='ls -l'
-alias lp='ls -p'
+alias l='ls -hf --color'   # add colors to filetypes
+alias ls='ls -Al'          # show hidden files
+alias lx='ls -lXB'         # sort by extension
+alias lk='ls -lSr'         # sort by size
+alias lc='ls -lcr'         # sort by change time
+alias lu='ls -lur'         # sort by access time
+alias lr='ls -lR'          # recursive ls
+alias lt='ls -ltr'         # sort by date
+alias lm='ls -al |more'    # pipe through more
+alias tree='tree -Csu'     # nice alternative to ls
 alias vim=vi
 alias ex=exit
 alias cl=clear
@@ -69,4 +75,7 @@ export PATH=${PATH}:Android/tools:Android/platform-tools
 [[ -s "/Users/andredublin/.rvm/scripts/rvm" ]] && source "/Users/andredublin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Python 2.7
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+# export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+
+# PATH
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
