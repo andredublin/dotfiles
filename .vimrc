@@ -31,7 +31,6 @@ set guifont=Monaco:h12
 set smartindent
 set autoindent
 
-set spell
 set showmode
 
 "Searching
