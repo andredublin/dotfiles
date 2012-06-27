@@ -52,7 +52,6 @@ alias gps='ps -A | grep'   # list processes and regex search'
 alias vim=vi
 alias ex=exit
 alias cl=clear
-alias server='ssh editme'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias pgrestart='pg_ctl restart'
