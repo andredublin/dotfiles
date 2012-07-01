@@ -4,8 +4,13 @@ Pry.config.editor = 'vim'
 # Pager
 Pry.config.pager = false
 
-# Nice exit message :D
-Pry.hooks = { :after_session => proc { puts 'bye-bye' } }
+# Nice enter/exit message :D
+Pry.config.hooks.add_hook(:before_session, :say_hi) do
+   puts 'What up'
+end
+Pry.config.hooks.add_hook(:after_session, :say_bye) do
+   puts 'Peace out'
+end
 
 # Prompt with ruby version
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * "}]
