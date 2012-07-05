@@ -1,1 +1,7 @@
+# Source a .rvmrc file in a directory after changing to it, if it exists.
+# To disable this fature, set in root/home .rvmrc file:
 rvm_project_rvmrc=0
+
+# Automatically trust project .rvmrc files
+#
+export rvm_trust_rvmrcs_flag=1
