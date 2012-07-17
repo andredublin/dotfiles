@@ -63,36 +63,35 @@ set noswapfile
 set ts=4
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-"indent blocks of text 4 spaces
+" indent blocks of text 4 spaces
 set shiftwidth=4
-"indent blocks of text 4 spaces
+" indent blocks of text 4 spaces
 set tabstop=4
-set softtabstop=3
 set expandtab
 " ----------------------------------------------------------------------------
 "  GUI
 " ----------------------------------------------------------------------------
 " set default theme
 colorscheme railscasts3
-"set default font, font-size (mac)
+" set default font, font-size (mac)
 set guifont=Monaco:h10
 set autoindent
 set smartindent
 set splitbelow
 set cursorline
-"highlight current line
+" highlight current line
 set cul
-"relative numbering
+" relative numbering
 set rnu
 " Show matching brackets.
 set showmatch
 " Bracket blinking.
 set mat=5
-"Set the amount of tabs open at any given time.
+" Set the amount of tabs open at any given time.
 set tabpagemax=5
-"Syntax highlighting on
+" Syntax highlighting on
 syntax on
-"RegEx Do The Damn Thing
+" RegEx Do The Damn Thing
 set magic
 " line numbers on
 set number
@@ -111,7 +110,7 @@ set nolist
 " ----------------------------------------------------------------------------
 "  STATUS LINE
 " ----------------------------------------------------------------------------
-"enable status line
+" enable status line
 set laststatus=2
 set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 " ----------------------------------------------------------------------------
