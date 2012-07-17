@@ -1,209 +1,223 @@
-".vimrc file by Andre Dublin
-"http://andredublin.com
-"Forget compatibility with Vi. Who cares.
+" .vimrc file by Andre Dublin
+" http://andredublin.com
+" Forget compatibility with Vi. Who cares.
 set nocompatible
-
-set number "line numbers on
-colorscheme railscasts3
-
-"Write the old file out when switching between files.
-set autowrite
-
-"Display current cursor position in lower right corner.
-set ruler
-
-"Switch between buffers without saving
+" ----------------------------------------------------------------------------
+"  Save | Reload VIM
+" ----------------------------------------------------------------------------
+if has("autocmd")
+   autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+" ----------------------------------------------------------------------------
+"  Pathogen Set Up
+" ----------------------------------------------------------------------------
+" store plugins in non-default 'bundle' directory
+call pathogen#infect('vim-plugins')
+filetype on
+filetype indent on
+filetype plugin on
+" ----------------------------------------------------------------------------
+"  MISC
+" ----------------------------------------------------------------------------
+" This shows what you are typing as a command.
+set showcmd
+set showmode
+" Reassign map leader key
+let mapleader=","
+set timeoutlen=500
+" Save when focus lost
+au FocusLost * :wa
+" Switch between buffers without saving
 set hidden
-
-"Always show the status line
-set laststatus=2
-
-"Nice tabbing
-set tabstop=3
+" Write the old file out when switching between files.
+set autowrite
+" ----------------------------------------------------------------------------
+"  NERDTree
+" ----------------------------------------------------------------------------
+" Shortcut for NERDTreeToggle
+nmap <leader>nt :NERDTreeToggle <CR>
+" NERDTree Settings
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+" autopen NERDTree and focus cursor in new document
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+" Map directorys
+nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
+nmap <leader>s :cd ~/Sites<cr>:e.<cr>
+nmap <leader>h :cd ~/<cr>:e.<cr>
+" ----------------------------------------------------------------------------
+"  Backups
+" ----------------------------------------------------------------------------
+" do not keep backups after close
+set nobackup
+" do not keep a backup while working
+set nowritebackup
+" don't keep swp files either
+set noswapfile
+" ----------------------------------------------------------------------------
+" Tabs
+" ----------------------------------------------------------------------------
+"Tabs Space
+set ts=4
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+"indent blocks of text 4 spaces
+set shiftwidth=4
+"indent blocks of text 4 spaces
+set tabstop=4
 set softtabstop=3
 set expandtab
-set shiftwidth=3
-
-"Set font type and size. Depends on the resolution. Larger screens, prefer h20
-set guifont=Monaco:h12
-
-"Indent Stuff
-set smartindent
+" ----------------------------------------------------------------------------
+"  GUI
+" ----------------------------------------------------------------------------
+" set default theme
+colorscheme railscasts3
+"set default font, font-size (mac)
+set guifont=Monaco:h10
 set autoindent
-
-set showmode
-
-"Searching
+set smartindent
+set splitbelow
+set cursorline
+"highlight current line
+set cul
+"relative numbering
+set rnu
+" Show matching brackets.
+set showmatch
+" Bracket blinking.
+set mat=5
+"Set the amount of tabs open at any given time.
+set tabpagemax=5
+"Syntax highlighting on
+syntax on
+"RegEx Do The Damn Thing
+set magic
+" line numbers on
+set number
+" Display current cursor position in lower right corner.
+set ruler
+" Windows can be 0 line high
+set winminheight=0
+" Hide mouse when typing
+set mousehide 
+" Hide MacVim toolbar by default
+set go-=T
+" Prefer a slightly higher line height
+set linespace=3 
+syntax on
+set nolist
+" ----------------------------------------------------------------------------
+"  STATUS LINE
+" ----------------------------------------------------------------------------
+"enable status line
+set laststatus=2
+set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
+" ----------------------------------------------------------------------------
+"  SEARCH
+" ----------------------------------------------------------------------------
 set cursorline "Highlight current line cursor is on
 set showmatch "show matching brackets/parenthesis
 set incsearch "Find as you type search
 set ignorecase "case insensitive search
 set smartcase "case sensitive when uc present
 set hlsearch "Highlight searching
-
-set winminheight=0 "Windows can be 0 line high
-
-"Better line wrapping
+set spell
+set gdefault
+" Wildmenu autocompletion
+if has("wildmenu")
+    set wildmenu
+    set wildmode=list:longest,full
+    set wildignore+=*.a,*.o
+    set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+    set wildignore+=.DS_Store,.git,.hg,.svn
+    set wildignore+=*~,*.swp,*.tmp
+endif
+" ----------------------------------------------------------------------------
+"  FORMATTING
+" ----------------------------------------------------------------------------
+" Indent Stuff
+set smartindent
+set autoindent
+" Better line wrapping
 set wrap
-set textwidth=79
 set formatoptions=qrnl
-
-"Hard-wrap paragraphs of text
-nnoremap <leader>q gqip
-
-set mousehide "Hide mouse when typing
-
-"Leader key settings
-let mapleader= ',' "Want a different map leader than \
-set timeoutlen=500
-
-set showcmd "Show command in bottom right portion of the screen
-
-"For autocompletion
-set wildmenu "show list instead of completing
-set wildmode=list:longest,full "command <Tab> completion, list matches, then longest common part, then all.
-set list
-set listchars=tab:?.,trail:.,extends:#,nbsp:. "Highlight problematic whitespace
-set laststatus=2
-set linespace=3 "Prefer a slightly higher line height
-
-set go-=T "Hide MacVim toolbar by default
-
+set dictionary=en
+" Read files from buffers, tag fiels and dictionary for completion
+set complete=.,w,b,u,],i,k
+" Thorfile, Rakefile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby
+autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
+autocmd FileType javascript set sw=4 sts=4 et
+au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+" ----------------------------------------------------------------------------
+"  FOLDING
+" ----------------------------------------------------------------------------
+if has('folding')
+    set foldenable
+    set foldcolumn=1
+    autocmd FileType ruby setlocal foldmethod=syntax
+    set foldlevel=1
+    set foldnestmax=2
+    set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
+    "Shortcut to fold tags with leader (usually \) + ft
+    nnoremap <leader>ft Vatzf
+    highlight Folded guibg=grey guifg=blue
+    highlight FoldColumn guibg=darkgrey guifg=white
+endif
+" ----------------------------------------------------------------------------
+"  Conveniences
+" ----------------------------------------------------------------------------
 " Create dictionary for custom expansions
 set dictionary+=/Users/andredublin/.vim/dict.txt
-
-"Opens a vertical split and switches over (\v)
+" Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
-"Split windows BELOW the current window!
+" Split windows BELOW the current window!
 set splitbelow
-"Walking through windows and make them fullscreen at the same time
+" Walking through windows and make them fullscreen at the same time
 map <Up> <c-w>k<c-w>_<c-w><Bar>
 map <Down> <c-w>j<c-w>_<c-w><Bar>
 map <Left> <c-w>h<c-w>_<c-w><Bar>
 map <Right> <c-w>l<c-w>_<c-w><Bar>
-
-" session settings
+" Session settings
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
-
-"Enable filetypes
-filetype on
-filetype plugin on
-filetype indent on
-syntax on
-
-"auto fold code
-set foldenable
-"Shortcut to fold tags with leader (usually \) + ft
-nnoremap <leader>ft Vatzf
-highlight Folded guibg=grey guifg=blue
-highlight FoldColumn guibg=darkgrey guifg=white
-
-"Map directorys
-nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
-nmap <leader>s :cd ~/Sites<cr>:e.<cr>
-nmap <leader>h :cd ~/<cr>:e.<cr>
-
-"Shortcut to my vimrc file
+" Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
-
-"Shortcut for logging into my server
-nmap <leader>server :Nread [ftpinfo]<cr>
-
-"Change zen coding expand key to Ctrl + e
+" Change zen coding expand key to Ctrl + e
 let g:user_zen_expandabbr_key = '<C-e>'
-
-"Taglist
+" Taglist
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <leader>tl :TlistToggle<cr>
 map <leader>bt :!/usr/bin/ctags -R --ruby-kinds=+p --fields=+iaS --extra=+q .<cr>
-
-"Saves time
+" Saves time
 nmap <space> :
-
-"Automatcially change current directory to that of the file in the buffer
+" Automatcially change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
-
-"Source the vimrc file after saving it
-if has("autocmd")
-	autocmd bufwritepost .vimrc source $MYVIMRC
-endif
-
-"Map code completion to , + tab
+" Map code completion to , + tab
 imap <leader><tab> <C-x><C-o>
-
-"Faster shortcut for commenting. Requires T-Comment plugin
+" Faster shortcut for commenting. Requires T-Comment plugin
 map <leader>c <c-_><c-_>
-
-"Change working directory to that of the current file
+" Change working directory to that of the current file
 cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
-
-"http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-"Map escape key to jj -- much faster
+" Map escape key to jj -- much faster
 imap jj <esc>
-
-"Delete all buffers (via Derek Wyatt)
+" Delete all buffers (via Derek Wyatt)
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
-
-"Bubble single lines (kicks butt)
-"http://vimcasts.org/episodes/bubbling-text/
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
-"Bubble multiple lines
-vmap <C-Up> xkP`[V`]
-vmap <C-Down> xp`[V`]
-
 " easier window navigation
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-
-"------------------------"
-"NERDTREE PLUGIN SETTINGS
-"------------------------"
-"Shortcut for NERDTreeToggle
-nmap <leader>nt :NERDTreeToggle <CR>
-
-"NERDTree Settings
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-
-"autopen NERDTree and focus cursor in new document
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-
-"Helpeful abbreviations
-iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-iab llorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
-"Spelling corrects. Just for example. Add yours below.
-iab teh the
-iab Teh The
-
 " Shortcut to opening a virtual split to right of current pane
 " Makes more sense than opening to the left
 nmap <leader>bv :bel vsp
-
-" Saves file when Vim window loses focus
-au FocusLost * :wa
-
 " No more stretching for navigating files
 noremap h j
 noremap j h
 noremap k gj
 noremap l gk
 noremap ; l
-
-"Syntax files
-au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
