@@ -1,0 +1,25 @@
+--langdef=objc
+--langmap=objc:.m
+--regex-objc=/^[\t ]*(\-|\+)[\t ]*\([_a-zA-Z0-9][_a-zA-Z0-9]*\)([_a-zA-Z0-9][_a-zA-Z0-9]*)/\2/f/
+
+--recurse=yes
+--extra=+f
+--exclude=.git
+--exclude=log 
+--verbose=yes
+
+--langdef=js
+--langmap=js:.js
+--regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/,object/
+--regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/,function/
+--regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*([^)])/\1/,function/
+--regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/,array/
+--regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/,string/
+--regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/,string/
+
+--langdef=scss
+--langmap=scss:.scss
+--regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*\{/| \1/d,definition/
+--regex-scss=/^[@]mixin ([^ (]+).*/\1/m,mixin/
+--regex-ruby=/^[ \t]*describe (.*) do/\1/d,rspec describe/
+--regex-ruby=/^[ \t]*context ['"](.*)['"] do/\1/C,rspec context/
