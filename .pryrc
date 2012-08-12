@@ -1,5 +1,5 @@
-# Vim as default editor
-Pry.config.editor = 'sublime'
+# Sublime as default editor
+Pry.config.editor = proc { |file, line| "sublime #{file} +#{line}" }
 
 # Pager
 Pry.config.pager = false
@@ -22,3 +22,12 @@ begin
 rescue
     puts "=> Unable to load awesome_print, please type 'gem install awesome_print'."
 end
+
+# Exception handler
+Pry.config.exception_handler = proc do |output, exception, _|
+    output.puts "#{exception.class}: #{exception.message}"
+    outpus.puts "from #{exception.backtrace.first}"
+end
+
+# Whitelist exceptions caught
+Pry.config.exception_whitelist = [SignalError, SystemExit, NoMemoryError]
