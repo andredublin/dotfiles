@@ -41,8 +41,6 @@ alias home='cd ~'
 alias ren=mv
 alias up='cd ..'
 alias r='rails'
-alias l='ls -alF'
-alias ll='ls -CF'
 alias ls='ls -Al'          # show hidden files
 alias lx='ls -lb'          # sort by extension
 alias lk='ls -lSr'         # sort by size
@@ -63,10 +61,22 @@ alias pg='psql'
 alias mystart='mysql.server start'
 alias mystop='mysql.server stop'
 alias myrestart='mysql.server restart'
+alias mysql='mysql -u root -proot'
 alias redis='redis-server /usr/local/etc/redis.conf'
 alias apstart='sudo apachectl start'
 alias apstop='sudo apachectl stop'
 alias aprestart='sudo apachectl graceful'
+
+# V4 trunk/core
+alias updatesvn='cd ~/Sites/V4; svn up core; svn up trunk; cd -'
+
+# ssh
+alias v4dev='ssh adublin@v4dev.com'
+alias rpmlive='ssh andre@108.171.176.232'
+alias rpmdev='ssh andre@rpmcornerstone'
+
+# sshfs
+alias mountv4dev='sshfs adublin@v4dev.com:/home/adublin/ ~/SSHFS/v4dev -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=v4dev'
 
 # Android platform tools
 export PATH=${PATH}:Android/tools:Android/platform-tools
