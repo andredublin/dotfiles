@@ -5,12 +5,8 @@ Pry.config.editor = proc { |file, line| "sublime #{file} +#{line}" }
 Pry.config.pager = false
 
 # Nice enter/exit message :D
-Pry.config.hooks.add_hook(:before_session, :say_hi) do
-   puts 'What up'
-end
-Pry.config.hooks.add_hook(:after_session, :say_bye) do
-   puts 'Peace out'
-end
+Pry.config.hooks.add_hook(:before_session, :say_hi) { puts 'What up' }
+Pry.config.hooks.add_hook(:after_session, :say_bye) { puts 'Peace out' }
 
 # Prompt with ruby version
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * "}]
