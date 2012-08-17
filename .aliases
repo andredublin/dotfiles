@@ -36,6 +36,7 @@ alias redis='redis-server /usr/local/etc/redis.conf'
 alias apstart='sudo apachectl start'
 alias apstop='sudo apachectl stop'
 alias aprestart='sudo apachectl graceful'
+alias zshconfig="vi ~/.zshrc"
 
 # Listing stuff
 alias ls='ls -Al'          # show hidden files
@@ -56,6 +57,3 @@ alias flush='dscacheutil -flushcache'
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'enl' -t '^(GET|POST) ' 'tcp and port 80'"
-
-# ZSH Config
-alias zshconfig="vi ~/.zshrc"
