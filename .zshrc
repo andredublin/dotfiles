@@ -43,3 +43,6 @@ export PATH=${PATH}:Android/tools:Android/platform-tools
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Source .aliases
+source ~/.aliases
