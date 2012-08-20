@@ -3,7 +3,6 @@ alias sites='cd ~/Sites/'
 alias desk='cd /Users/andredublin/Desktop'
 alias dl='cd /Users/andredublin/Downloads'
 alias home='cd ~'
-alias ren='mv'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -22,6 +21,7 @@ alias r='rails'
 alias v='vi'
 alias g='git'
 alias ex='exit'
+alias ren='mv'
 alias cl='clear'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
@@ -39,7 +39,7 @@ alias aprestart='sudo apachectl graceful'
 alias zshconfig="vi ~/.zshrc"
 
 # Listing stuff
-alias ls='ls -Al'          # show hidden files
+alias ll='ls -Al'          # show hidden files
 alias lx='ls -lb'          # sort by extension
 alias lk='ls -lSr'         # sort by size
 alias lc='ls -lcr'         # sort by change time
