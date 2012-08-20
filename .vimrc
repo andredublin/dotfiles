@@ -39,7 +39,7 @@ nmap <leader>nt :NERDTreeToggle <CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr']
 " autopen NERDTree and focus cursor in new document
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
@@ -63,9 +63,9 @@ set noswapfile
 set ts=4
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-" indent blocks of text 4 spaces
+"indent blocks of text 4 spaces
 set shiftwidth=4
-" indent blocks of text 4 spaces
+"indent blocks of text 4 spaces
 set tabstop=4
 set expandtab
 " ----------------------------------------------------------------------------
@@ -81,8 +81,6 @@ set splitbelow
 set cursorline
 " highlight current line
 set cul
-" relative numbering
-set rnu
 " Show matching brackets.
 set showmatch
 " Bracket blinking.
@@ -186,11 +184,6 @@ set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Change zen coding expand key to Ctrl + e
 let g:user_zen_expandabbr_key = '<C-e>'
-" Taglist
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-map <leader>tl :TlistToggle<cr>
-map <leader>bt :!/usr/bin/ctags -R --ruby-kinds=+p --fields=+iaS --extra=+q .<cr>
 " Saves time
 nmap <space> :
 " Automatcially change current directory to that of the file in the buffer
