@@ -5,7 +5,7 @@
 	whitespace = nowarn
 [github]
 	user = dublinan
-	token = 1d02930d73ced1e01262111bde6cd790
+	token = editme
 [color]
     ui = auto
 [color "branch"]
