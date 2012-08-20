@@ -5,7 +5,7 @@
 	whitespace = nowarn
 [github]
 	user = dublinan
-	token = editme
+	token = 1d02930d73ced1e01262111bde6cd790
 [color]
     ui = auto
 [color "branch"]
@@ -37,7 +37,7 @@
     cdiff = diff --cached
     hist = log --pretty=format:\"%h %ad | %s%d [%cn]\" -p -2 --graph --date=short
     remote = remote -v 
-    br = branch
+    br = branch -a
     cp = cherry-pick
     mergeff = merge --ff
     tag = tag -a
