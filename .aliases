@@ -15,7 +15,7 @@ alias rpmdev='ssh andre@rpmcornerstone'
 
 # SSHFS
 alias mountv4dev='sshfs adublin@v4dev.com:/home/adublin/ ~/SSHFS/v4dev -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=v4dev'
-alias mountrpmlive='sshfs andre@108.171.176.232:/home/andre/ ~/SSHFS/rpmlive -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=rpmlive'
+alias mountrpmlive='sshfs andre@108.171.176.232:/ ~/SSHFS/rpmlive -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=rpmlive'
 
 # Shortcuts
 alias r='rails'
