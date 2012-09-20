@@ -38,6 +38,7 @@ alias apstart='sudo apachectl start'
 alias apstop='sudo apachectl stop'
 alias aprestart='sudo apachectl graceful'
 alias zshconfig="vi ~/.zshrc"
+alias rvmrc="rvm --rvmrc --create"
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files
