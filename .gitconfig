@@ -36,8 +36,9 @@
     sdiff = diff --staged
     cdiff = diff --cached
     hist = log --pretty=format:\"%h %ad | %s%d [%cn]\" -p -2 --graph --date=short
-    remote = remote -v 
+    remote = remote --verbose
     br = branch -a
+    bv = branch -avv
     cp = cherry-pick
     mergeff = merge --ff
     tag = tag -a
