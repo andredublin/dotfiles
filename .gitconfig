@@ -26,6 +26,7 @@
     pom = push origin master
     pullff = pull --ff
     ci = commit
+    logd = log --diff-filter=D --summary
     di = diff
     dc = diff --cached
     amend = commit --amend
