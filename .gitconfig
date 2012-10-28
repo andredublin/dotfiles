@@ -42,6 +42,8 @@
     bv = branch -avv
     cp = cherry-pick
     mergeff = merge --ff
+    merged = branch --merged
+    nomerge = branch --no-merged
     tag = tag -a
     add = add -u
 [format]
