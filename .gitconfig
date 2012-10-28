@@ -43,7 +43,7 @@
     cp = cherry-pick
     mergeff = merge --ff
     merged = branch --merged
-    nomerge = branch --no-merged
+    nomerged = branch --no-merged
     tag = tag -a
     add = add -u
 [format]
