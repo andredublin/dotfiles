@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "/Users/andredublin/.rvm/scripts/rvm" ]] && source "/Users/andredublin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # PATH
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
