@@ -29,16 +29,13 @@ plugins=(git github bundler brew gem rvm adublin zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Android platform tools
-export PATH=${PATH}:Android/tools:Android/platform-tools
-
 # RVM
 [[ -s "/Users/andredublin/.rvm/scripts/rvm" ]] && source "/Users/andredublin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # PATH
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Source .aliases
 . ~/.aliases
