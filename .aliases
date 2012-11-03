@@ -40,6 +40,7 @@ alias apstop='sudo apachectl stop'
 alias aprestart='sudo apachectl graceful'
 alias zshconfig="vi ~/.zshrc"
 alias rvmrc="rvm --rvmrc --create"
+alias android="./Android/tools/android"
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files

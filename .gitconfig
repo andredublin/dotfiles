@@ -33,13 +33,13 @@
     aa = add --all
     fa = fetch --all
     st = status -vb
-    aa = add --all
     sdiff = diff --staged
     cdiff = diff --cached
     hist = log --pretty=format:\"%h %ad | %s%d [%cn]\" -p -2 --graph --date=short
     remote = remote --verbose
     br = branch -a
     bv = branch -avv
+    bd = branch -D
     cp = cherry-pick
     mergeff = merge --ff
     merged = branch --merged
