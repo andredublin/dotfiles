@@ -27,19 +27,17 @@
     pullff = pull --ff
     ci = commit
     logd = log --diff-filter=D --summary
+    logg = log --graph --abbrev-commit --date=relative
     di = diff
     dc = diff --cached
     amend = commit --amend
     aa = add --all
     fa = fetch --all
     st = status -vb
-    sdiff = diff --staged
-    cdiff = diff --cached
     hist = log --pretty=format:\"%h %ad | %s%d [%cn]\" -p -2 --graph --date=short
     remote = remote --verbose
     br = branch -a
     bv = branch -avv
-    bd = branch -D
     cp = cherry-pick
     mergeff = merge --ff
     merged = branch --merged
@@ -57,5 +55,7 @@
 [branch]
     # always setup 'git pull' to rebase instead of merge
     autosetuprebase = always
+[branch "master"]
+    rebase = true
 [mergetool]
     keepBackup = true
