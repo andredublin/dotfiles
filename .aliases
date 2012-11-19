@@ -22,6 +22,7 @@ alias mountrpmlive='sshfs andre@108.171.176.232:/ ~/SSHFS/rpmlive -oauto_cache,r
 alias r='rails'
 alias v='vi'
 alias g='git'
+alias gk='gitk --all 2> /dev/null &'
 alias ex='exit'
 alias ren='mv'
 alias cl='clear'
