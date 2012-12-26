@@ -42,6 +42,7 @@
     mergeff = merge --ff
     merged = branch --merged
     nomerged = branch --no-merged
+    conflicts = diff --name-only --diff-filter=U
     tag = tag -a
     add = add -u
 [format]
