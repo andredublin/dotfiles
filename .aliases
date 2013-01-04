@@ -1,7 +1,7 @@
 # Moving around
 alias sites='cd ~/Sites/'
-alias desk='cd /Users/andredublin/Desktop'
-alias dl='cd /Users/andredublin/Downloads'
+alias desk='cd /Users/dublinan/Desktop'
+alias dl='cd /Users/dublinan/Downloads'
 alias home='cd ~'
 alias ..='cd ..'
 alias ...='cd ../..'
