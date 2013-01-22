@@ -38,4 +38,4 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/games/bin:/usr/local/share/npm/b
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Source .aliases
-. ~/.aliases
+source  ~/.aliases
