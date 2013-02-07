@@ -27,10 +27,12 @@
     pullff = pull --ff
     ci = commit
     logd = log --diff-filter=D --summary
-    logg = log --graph --abbrev-commit --date=relative
+    graph = log --graph --abbrev-commit --date=relative
     di = diff
+    ds = diff --staged
     dc = diff --cached
     amend = commit --amend
+    undo = reset --soft HEAD^
     aa = add --all
     fa = fetch --all
     st = status -vb
