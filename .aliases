@@ -57,5 +57,9 @@ alias gps='ps -A | grep'   # list processes and regex search'
 # Enhance WHOIS lookups
 alias whois='whois -h whois-servers.net'
 
+# IP Stuff
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\   -f2'
+
 # Flush Directory Service cache
 alias flush='dscacheutil -flushcache'
