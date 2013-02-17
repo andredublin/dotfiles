@@ -8,15 +8,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# SSH
-alias v4dev='ssh adublin@v4dev.com'
-alias rpmlive='ssh andre@108.171.176.232'
-alias rpmdev='ssh andre@rpmcornerstone'
-alias server='ssh andredub@andredublin.com'
-
 # FS
-alias mountv4dev='sshfs adublin@v4dev.com:/home/adublin/ /Volumes/share/V4DEV -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=v4dev'
-alias mountrpmlive='sshfs andre@108.171.176.232:/ /Volumes/share/RPM -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=rpmlive'
 alias mountkiz='mount -t smbfs //andre.dublin@kizcrews035/Users /Volumes/share/KIZ'
 
 # Shortcuts
