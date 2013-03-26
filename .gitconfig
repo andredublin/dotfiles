@@ -1,11 +1,11 @@
 [user]
-	name = Andre Dublin
-	email = 81dublin@gmail.com
+    name = Andre Dublin
+    email = 81dublin@gmail.com
 [apply]
-	whitespace = nowarn
+    whitespace = nowarn
 [github]
-	user = dublinan
-	token = editme
+    user = dublinan
+    token = editme
 [color]
     ui = auto
 [color "branch"]
@@ -42,12 +42,13 @@
     bv = branch -avv
     bd = branch -D
     cp = cherry-pick
-    mergeff = merge --ff
+    mergeff = merge --no-ff
     merged = branch --merged
     nomerged = branch --no-merged
     conflicts = diff --name-only --diff-filter=U
     tag = tag -a
     add = add -u
+    squish = rebase -i @{u}
 [format]
     pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [core]
