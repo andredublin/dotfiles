@@ -42,7 +42,7 @@
     bv = branch -avv
     bd = branch -D
     cp = cherry-pick
-    mergeff = merge --no-ff
+    merge = merge --no-ff
     merged = branch --merged
     nomerged = branch --no-merged
     conflicts = diff --name-only --diff-filter=U
