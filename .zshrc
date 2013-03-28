@@ -29,13 +29,7 @@ plugins=(git github bundler brew gem rvm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# RVM
-[[ -s "/Users/andredublin/.rvm/scripts/rvm" ]] && source "/Users/andredublin/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# PATH
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/games/bin:$PATH
-
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # Source .aliases
 source  ~/.aliases
+
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
