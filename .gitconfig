@@ -52,7 +52,7 @@
 [format]
     pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [core]
-    excludesfile = /opt/boxen/config/git/gitignore
+    excludesfile = ~/.gitignore_global
     quotepath = false
 [push]
     # 'git push' should only do the current branch, not all
@@ -65,8 +65,3 @@
 [mergetool]
     keepBackup = true
 
-[hub]
-protocol = https
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
