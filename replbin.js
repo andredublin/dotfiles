@@ -1,8 +1,14 @@
 #!/usr/local/bin/node
 
-// custom repl and context
 var repl = require('repl');
-var context = repl.start('::>>', null, null, null, true).context;
+var context = repl.start({
+  prompt: '::>> ',
+  useColors: true,
+  ignoreUndefined: true
+}).on('exit', function() {
+  console.log('Exiting node REPL');
+  process.exit();
+});
 
 // preload modules
 context.http = require('http');
