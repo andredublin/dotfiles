@@ -32,8 +32,8 @@ alias redis='redis-server /usr/local/etc/redis.conf'
 alias apstart='sudo apachectl start'
 alias apstop='sudo apachectl stop'
 alias aprestart='sudo apachectl graceful'
-alias zshconfig="vi ~/.zshrc"
-alias android="./Android/tools/android"
+alias zshconfig='vi ~/.zshrc'
+alias android='./Android/tools/android'
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files
