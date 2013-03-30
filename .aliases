@@ -34,7 +34,7 @@ alias apstop='sudo apachectl stop'
 alias aprestart='sudo apachectl graceful'
 alias zshconfig='vi ~/.zshrc'
 alias android='./Android/tools/android'
-alias node='~/replbin.js'
+alias repl='~/replbin.js'
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files
