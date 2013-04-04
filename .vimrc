@@ -76,7 +76,7 @@ set expandtab
 "  GUI
 " ----------------------------------------------------------------------------
 " set default theme
-" "colorscheme railscasts3
+colorscheme darkburn
 " set default font, font-size (mac)
 set guifont=Monaco:h10
 set autoindent
