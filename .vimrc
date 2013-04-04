@@ -1,21 +1,21 @@
-" .vimrc file by Andre Dublin
-" http://andredublin.com
 " Forget compatibility with Vi. Who cares.
 set nocompatible
+
 " ----------------------------------------------------------------------------
 "  Save | Reload VIM
 " ----------------------------------------------------------------------------
 if has("autocmd")
-   autocmd bufwritepost .vimrc source $MYVIMRC
+    autocmd bufwritepost .vimrc source $MYVIMRC
 endif
+
 " ----------------------------------------------------------------------------
-"  Pathogen Set Up
-" ----------------------------------------------------------------------------
-" store plugins in non-default 'bundle' directory
-call pathogen#infect('vim-plugins')
-filetype on
-filetype indent on
-filetype plugin on
+" Load Plugins via Vundle
+"
+"  ----------------------------------------------------------------------------
+if filereadable(expand("$HOME/.vim/vundle_bundle.vim"))
+    source $HOME/.vim/vundle_bundle.vim
+endif
+
 " ----------------------------------------------------------------------------
 "  MISC
 " ----------------------------------------------------------------------------
@@ -31,6 +31,7 @@ au FocusLost * :wa
 set hidden
 " Write the old file out when switching between files.
 set autowrite
+
 " ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
@@ -47,6 +48,7 @@ autocmd VimEnter * wincmd p
 nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
 nmap <leader>s :cd ~/Sites<cr>:e.<cr>
 nmap <leader>h :cd ~/<cr>:e.<cr>
+
 " ----------------------------------------------------------------------------
 "  Backups
 " ----------------------------------------------------------------------------
@@ -56,6 +58,7 @@ set nobackup
 set nowritebackup
 " don't keep swp files either
 set noswapfile
+
 " ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
@@ -68,11 +71,12 @@ set shiftwidth=4
 "indent blocks of text 4 spaces
 set tabstop=4
 set expandtab
+
 " ----------------------------------------------------------------------------
 "  GUI
 " ----------------------------------------------------------------------------
 " set default theme
-colorscheme railscasts3
+" "colorscheme railscasts3
 " set default font, font-size (mac)
 set guifont=Monaco:h10
 set autoindent
@@ -105,12 +109,14 @@ set go-=T
 set linespace=3 
 syntax on
 set nolist
+
 " ----------------------------------------------------------------------------
 "  STATUS LINE
 " ----------------------------------------------------------------------------
 " enable status line
 set laststatus=2
 set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
+
 " ----------------------------------------------------------------------------
 "  SEARCH
 " ----------------------------------------------------------------------------
@@ -131,6 +137,7 @@ if has("wildmenu")
     set wildignore+=.DS_Store,.git,.hg,.svn
     set wildignore+=*~,*.swp,*.tmp
 endif
+
 " ----------------------------------------------------------------------------
 "  FORMATTING
 " ----------------------------------------------------------------------------
@@ -149,6 +156,7 @@ autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
 autocmd FileType javascript set sw=4 sts=4 et
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
 " ----------------------------------------------------------------------------
 "  FOLDING
 " ----------------------------------------------------------------------------
@@ -164,6 +172,7 @@ if has('folding')
     highlight Folded guibg=grey guifg=blue
     highlight FoldColumn guibg=darkgrey guifg=white
 endif
+
 " ----------------------------------------------------------------------------
 "  Conveniences
 " ----------------------------------------------------------------------------
