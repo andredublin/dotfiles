@@ -10,7 +10,6 @@ endif
 
 " ----------------------------------------------------------------------------
 " Load Plugins via Vundle
-"
 "  ----------------------------------------------------------------------------
 if filereadable(expand("$HOME/.vim/vundle_bundle.vim"))
     source $HOME/.vim/vundle_bundle.vim
@@ -27,10 +26,19 @@ let mapleader=","
 set timeoutlen=500
 " Save when focus lost
 au FocusLost * :wa
+" Ignore warnings from untitled buffers
+au FocusLost * silent! wa
 " Switch between buffers without saving
 set hidden
 " Write the old file out when switching between files.
 set autowrite
+
+" ----------------------------------------------------------------------------
+"  STATUS LINE
+" ----------------------------------------------------------------------------
+" enable status line
+set laststatus=2
+set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 
 " ----------------------------------------------------------------------------
 "  NERDTree
@@ -49,6 +57,43 @@ autocmd VimEnter * wincmd p
 nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
 nmap <leader>s :cd ~/Sites<cr>:e.<cr>
 nmap <leader>h :cd ~/<cr>:e.<cr>
+
+" ----------------------------------------------------------------------------
+"  Syntastic
+" ----------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+highlight SyntasticErrorSign guifg=white guibg=red
+highlight SyntasticErrorLine guibg=#2f0000
+let g:syntastic_check_on_open=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'active' }
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+
+" ----------------------------------------------------------------------------
+"  Tagbar
+" ----------------------------------------------------------------------------
+nnoremap <silent> <F9> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+" ----------------------------------------------------------------------------
+"  Zencoding
+" ----------------------------------------------------------------------------
+" Change zen coding leader key to Ctrl + e
+let g:user_zen_expandabbr_key = '<C-e>'
+
+" ----------------------------------------------------------------------------
+"  GitGutter
+" ----------------------------------------------------------------------------
+let g:gitgutter_enabled = 1
+let g:gitgutter_highlight_lines = 1
+let g:gitgutter_on_bufenter = 0
+let g:gitgutter_all_on_focusgained = 0
+let g:gitgutter_all_on_focusgained = 0
 
 " ----------------------------------------------------------------------------
 "  Backups
@@ -108,15 +153,7 @@ set mousehide
 set go-=T
 " Prefer a slightly higher line height
 set linespace=3 
-syntax on
 set nolist
-
-" ----------------------------------------------------------------------------
-"  STATUS LINE
-" ----------------------------------------------------------------------------
-" enable status line
-set laststatus=2
-set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 
 " ----------------------------------------------------------------------------
 "  SEARCH
@@ -177,8 +214,6 @@ endif
 " ----------------------------------------------------------------------------
 "  Conveniences
 " ----------------------------------------------------------------------------
-" Create dictionary for custom expansions
-set dictionary+=/Users/andredublin/.vim/dict.txt
 " Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
 " Split windows BELOW the current window!
@@ -192,16 +227,10 @@ map <Right> <c-w>l<c-w>_<c-w><Bar>
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 " Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
-" Change zen coding leader key to Ctrl + e
-let g:user_zen_leader_key = '<C-e>'
 " Saves time
 nmap <space> :
 " Automatcially change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
-" Map code completion to , + tab
-imap <leader><tab> <C-x><C-o>
-" Faster shortcut for commenting. Requires T-Comment plugin
-map <leader>c <c-_><c-_>
 " Change working directory to that of the current file
 cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
