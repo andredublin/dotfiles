@@ -40,7 +40,8 @@ nmap <leader>nt :NERDTreeToggle <CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr','\.DS_Store']
+let NERDTreeChDirMode=1
 " autopen NERDTree and focus cursor in new document
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
@@ -191,8 +192,8 @@ map <Right> <c-w>l<c-w>_<c-w><Bar>
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 " Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
-" Change zen coding expand key to Ctrl + e
-let g:user_zen_expandabbr_key = '<C-e>'
+" Change zen coding leader key to Ctrl + e
+let g:user_zen_leader_key = '<C-e>'
 " Saves time
 nmap <space> :
 " Automatcially change current directory to that of the file in the buffer
