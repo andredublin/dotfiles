@@ -90,7 +90,6 @@ let g:user_zen_expandabbr_key = '<C-e>'
 "  GitGutter
 " ----------------------------------------------------------------------------
 let g:gitgutter_enabled = 1
-let g:gitgutter_highlight_lines = 1
 let g:gitgutter_on_bufenter = 0
 let g:gitgutter_all_on_focusgained = 0
 let g:gitgutter_all_on_focusgained = 0

@@ -35,6 +35,7 @@ alias aprestart='sudo apachectl graceful'
 alias zshconfig='vi ~/.zshrc'
 alias android='./Android/tools/android'
 alias repl='~/repl'
+alias sub='subl . &'
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files
