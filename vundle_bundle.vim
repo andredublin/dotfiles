@@ -29,5 +29,6 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on
