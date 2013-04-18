@@ -90,8 +90,8 @@ let g:tagbar_type_puppet = {
         \'s:site',
         \'n:node',
         \'d:definition'
-      \]
-    \}
+    \ ]
+\ }
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
         \ 'm:modules',
