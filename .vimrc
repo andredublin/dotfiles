@@ -16,13 +16,11 @@ if filereadable(expand("$HOME/.vim/vundle_bundle.vim"))
 endif
 
 " ----------------------------------------------------------------------------
-"  MISC
+"  Misc
 " ----------------------------------------------------------------------------
 " This shows what you are typing as a command.
 set showcmd
 set showmode
-" Reassign map leader key
-let mapleader=","
 set timeoutlen=500
 " Save when focus lost
 au FocusLost * :wa
@@ -32,9 +30,11 @@ au FocusLost * silent! wa
 set hidden
 " Write the old file out when switching between files.
 set autowrite
+set autoread
+set ttyfast
 
 " ----------------------------------------------------------------------------
-"  STATUS LINE
+"  Status Line
 " ----------------------------------------------------------------------------
 " enable status line
 set laststatus=2
@@ -79,6 +79,7 @@ let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 " ----------------------------------------------------------------------------
 nnoremap <silent> <F9> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 " ----------------------------------------------------------------------------
 "  Zencoding
@@ -99,6 +100,12 @@ let g:gitgutter_all_on_focusgained = 0
 " ----------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" ----------------------------------------------------------------------------
+"  Conque-Term
+" ----------------------------------------------------------------------------
+let g:ConqueTerm_Color = 1
+let g:ConqueTerm_TERM = 'xterm-256color'
 
 " ----------------------------------------------------------------------------
 "  Backups
@@ -131,6 +138,7 @@ colorscheme desert
 " set default font, font-size (mac)
 set guifont=Monaco:h10
 set splitbelow
+set splitright
 set cursorline
 " highlight current line
 set cul
@@ -159,7 +167,7 @@ set linespace=3
 set nolist
 
 " ----------------------------------------------------------------------------
-"  SEARCH
+"  Search
 " ----------------------------------------------------------------------------
 set cursorline "Highlight current line cursor is on
 set showmatch "show matching brackets/parenthesis
@@ -168,6 +176,7 @@ set ignorecase "case insensitive search
 set smartcase "case sensitive when uc present
 set hlsearch "Highlight searching
 set spell
+set spelllang=en_us
 set gdefault
 " Wildmenu autocompletion
 if has("wildmenu")
@@ -177,10 +186,21 @@ if has("wildmenu")
     set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
     set wildignore+=.DS_Store,.git,.hg,.svn
     set wildignore+=*~,*.swp,*.tmp
+    set wildignore+=vendor,log,gems,.bundle,Gemfile.lock,.gem,data\/mongodb
 endif
 
 " ----------------------------------------------------------------------------
-"  FORMATTING
+"  History
+" ----------------------------------------------------------------------------
+set undolevels=10000
+if has('persistent_undo')
+    set undodir=~/.vim/undo
+    set undofile
+    set undoreload=10000
+endif
+
+" ----------------------------------------------------------------------------
+"  Formatting
 " ----------------------------------------------------------------------------
 " Indent Stuff
 set smartindent
@@ -189,22 +209,25 @@ set autoindent
 set wrap
 set formatoptions=qrnl
 set dictionary=en
-" Read files from buffers, tag fiels and dictionary for completion
+" Encoding
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+" Read files from buffers, tag fields and dictionary for completion
 set complete=.,w,b,u,],i,k
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby
 autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
-autocmd FileType javascript set sw=4 sts=4 et
+autocmd FileType javascript set sw=2 sts=2 et
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " ----------------------------------------------------------------------------
-"  FOLDING
+"  Folding
 " ----------------------------------------------------------------------------
 if has('folding')
     set foldenable
     set foldcolumn=1
-    autocmd FileType ruby setlocal foldmethod=syntax
     set foldlevel=1
     set foldnestmax=2
     set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
@@ -217,11 +240,11 @@ endif
 " ----------------------------------------------------------------------------
 "  Conveniences
 " ----------------------------------------------------------------------------
+" Reassign map leader key
+let mapleader=","
 " Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
-" Split windows BELOW the current window!
-set splitbelow
-" Walking through windows and make them fullscreen at the same time
+" Walking through windows and make them full screen at the same time
 map <Up> <c-w>k<c-w>_<c-w><Bar>
 map <Down> <c-w>j<c-w>_<c-w><Bar>
 map <Left> <c-w>h<c-w>_<c-w><Bar>
@@ -239,7 +262,7 @@ cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
 " Map escape key to jj -- much faster
 imap jj <esc>
-" Delete all buffers (via Derek Wyatt)
+" Delete all buffers
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
 " easier window navigation
 nmap <C-h> <C-w>h
