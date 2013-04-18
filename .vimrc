@@ -154,6 +154,12 @@ set go-=T
 " Prefer a slightly higher line height
 set linespace=3 
 set nolist
+" Jump to last cursor position when editing a file
+" Don't do it when position is invalid or when inside an event handler
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
 
 " ----------------------------------------------------------------------------
 "  Search
@@ -188,6 +194,8 @@ if has('persistent_undo')
     set undoreload=10000
 endif
 
+set history=50
+
 " ----------------------------------------------------------------------------
 "  Formatting
 " ----------------------------------------------------------------------------
@@ -208,8 +216,17 @@ set complete=.,w,b,u,],i,k
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby
 autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
 autocmd FileType javascript set sw=2 sts=2 et
+autocmd FileType text setlocal textwidth=78
+" Markdown files end in .md
+au BufRead,BufNewFile *.md set filetype=markdown
+" Enable spellchecking for Markdown
+au BufRead,BufNewFile *.md setlocal spell
+" Automatically wrap at 80 characters for Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
 
 " ----------------------------------------------------------------------------
 "  Folding
