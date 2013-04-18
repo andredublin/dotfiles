@@ -30,7 +30,6 @@ au FocusLost * silent! wa
 set hidden
 " Write the old file out when switching between files.
 set autowrite
-set autoread
 set ttyfast
 
 " ----------------------------------------------------------------------------
@@ -53,10 +52,6 @@ let NERDTreeChDirMode=1
 " autopen NERDTree and focus cursor in new document
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
-" Map directorys
-nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
-nmap <leader>s :cd ~/Sites<cr>:e.<cr>
-nmap <leader>h :cd ~/<cr>:e.<cr>
 
 " ----------------------------------------------------------------------------
 "  Syntastic
@@ -247,6 +242,10 @@ map <Right> <c-w>l<c-w>_<c-w><Bar>
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 " Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
+" Map directorys
+nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
+nmap <leader>s :cd ~/Sites<cr>:e.<cr>
+nmap <leader>h :cd ~/<cr>:e.<cr>
 " Saves time
 nmap <space> :
 " Automatcially change current directory to that of the file in the buffer
