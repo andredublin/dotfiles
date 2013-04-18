@@ -130,8 +130,6 @@ set expandtab
 colorscheme desert
 " set default font, font-size (mac)
 set guifont=Monaco:h10
-set autoindent
-set smartindent
 set splitbelow
 set cursorline
 " highlight current line
