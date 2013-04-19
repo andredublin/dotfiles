@@ -1,5 +1,5 @@
-# Sublime as default editor
-Pry.config.editor = proc { |file, line| "sublime #{file} +#{line}" }
+# Vim as default editor
+Pry.config.editor = "mvim"
 
 # Pager
 Pry.config.pager = false
