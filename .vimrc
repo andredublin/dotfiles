@@ -31,6 +31,8 @@ set hidden
 " Write the old file out when switching between files.
 set autowrite
 set ttyfast
+" Session settings
+set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 
 " ----------------------------------------------------------------------------
 "  Status Line
@@ -43,7 +45,7 @@ set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 "  NERDTree
 " ----------------------------------------------------------------------------
 " Shortcut for NERDTreeToggle
-nmap <leader>nt :NERDTreeToggle <CR>
+nmap <leader>nt :NERDTreeToggle <CR><C-L>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -282,8 +284,6 @@ map <Up> <c-w>k<c-w>_<c-w><Bar>
 map <Down> <c-w>j<c-w>_<c-w><Bar>
 map <Left> <c-w>h<c-w>_<c-w><Bar>
 map <Right> <c-w>l<c-w>_<c-w><Bar>
-" Session settings
-set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
 " Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Map directorys
