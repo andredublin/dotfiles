@@ -261,10 +261,11 @@ let g:html_indent_tags = 'li\|p'
 "  Folding
 " ----------------------------------------------------------------------------
 if has('folding')
-    set foldenable
+    set foldmethod=indent
+    set nofoldenable
     set foldcolumn=1
     set foldlevel=1
-    set foldnestmax=2
+    set foldnestmax=10
     set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
     "Shortcut to fold tags with leader (usually \) + ft
     nnoremap <leader>ft Vatzf
