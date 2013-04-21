@@ -266,6 +266,7 @@ if has('folding')
     set foldcolumn=1
     set foldlevel=1
     set foldnestmax=10
+    set foldlevelstart=99
     set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
     "Shortcut to fold tags with leader (usually \) + ft
     nnoremap <leader>ft Vatzf
