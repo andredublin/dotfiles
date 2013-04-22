@@ -45,7 +45,7 @@ set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 "  NERDTree
 " ----------------------------------------------------------------------------
 " Shortcut for NERDTreeToggle
-nmap <leader>nt :NERDTreeToggle <CR><C-L>
+nmap <leader>nt :NERDTreeToggle <CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -262,7 +262,7 @@ let g:html_indent_tags = 'li\|p'
 " ----------------------------------------------------------------------------
 if has('folding')
     set foldmethod=indent
-    set nofoldenable
+    set foldenable
     set foldcolumn=1
     set foldlevel=1
     set foldnestmax=10
