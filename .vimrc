@@ -44,8 +44,8 @@ set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 " ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
-" Shortcut for NERDTreeToggle
-nmap <leader>nerd :NERDTreeToggle <CR>
+" Shortcut for NERDTreeToggld
+nmap <leader>tt :NERDTreeToggle <CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
