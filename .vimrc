@@ -45,12 +45,13 @@ set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
 "  NERDTree
 " ----------------------------------------------------------------------------
 " Shortcut for NERDTreeToggld
-nmap <leader>tt :NERDTreeToggle <CR>
+nmap <leader>nt :NERDTreeToggle <CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr','\.DS_Store']
 let NERDTreeChDirMode=1
+let NERDTreeMouseMode=3
 " autopen NERDTree and focus cursor in new document
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
@@ -147,6 +148,7 @@ set shiftwidth=4
 "indent blocks of text 4 spaces
 set tabstop=4
 set expandtab
+set softtabstop=4 " makes the spaces feel like real tabs
 
 " ----------------------------------------------------------------------------
 "  GUI
@@ -158,8 +160,6 @@ set guifont=Monaco:h10
 set splitbelow
 set splitright
 set cursorline
-" highlight current line
-set cul
 " Show matching brackets.
 set showmatch
 " Bracket blinking.
@@ -193,15 +193,12 @@ autocmd BufReadPost *
 " ----------------------------------------------------------------------------
 "  Search
 " ----------------------------------------------------------------------------
-set cursorline "Highlight current line cursor is on
 set showmatch "show matching brackets/parenthesis
 set incsearch "Find as you type search
 set ignorecase "case insensitive search
 set smartcase "case sensitive when uc present
 set hlsearch "Highlight searching
 set spell
-set spelllang=en_us
-set gdefault
 " Wildmenu autocompletion
 if has("wildmenu")
     set wildmenu
@@ -234,7 +231,6 @@ set autoindent
 " Better line wrapping
 set wrap
 set formatoptions=qrnl
-set dictionary=en
 " Encoding
 set encoding=utf-8
 set termencoding=utf-8
@@ -243,8 +239,6 @@ set fileencoding=utf-8
 set complete=.,w,b,u,],i,k
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby
-autocmd FileType ruby,haml,eruby,yaml,html,sass,cucumber set ai sw=2 sts=2 et
-autocmd FileType javascript set sw=2 sts=2 et
 autocmd FileType text setlocal textwidth=78
 " Markdown files end in .md
 au BufRead,BufNewFile *.md set filetype=markdown

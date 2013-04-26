@@ -36,6 +36,7 @@ alias zshconfig='vi ~/.zshrc'
 alias android='./Android/tools/android'
 alias repl='~/repl'
 alias sub='subl . &'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files
