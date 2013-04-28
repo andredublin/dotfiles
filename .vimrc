@@ -148,6 +148,9 @@ set guifont=Monaco:h10 " Set default font, font-size (mac)
 set splitbelow
 set splitright
 set cursorline
+set title " Change the terminals title
+set noerrorbells " Don't beep
+set visualbell " Don't beep
 set showmatch "Show matching brackets/parenthesis
 set mat=5 " Bracket blinking.
 set tabpagemax=5 " Set the amount of tabs open at any given time.
