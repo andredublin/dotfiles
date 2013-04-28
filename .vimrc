@@ -16,52 +16,53 @@ if filereadable(expand("$HOME/.vim/vundle_bundle.vim"))
 endif
 
 " ----------------------------------------------------------------------------
+" Windows Compatibility
+"  ----------------------------------------------------------------------------
+if has('win32') || has('win64')
+    set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+
+" ----------------------------------------------------------------------------
 "  Misc
 " ----------------------------------------------------------------------------
-" This shows what you are typing as a command.
-set showcmd
-set showmode
 set timeoutlen=500
-" Save when focus lost
-au FocusLost * :wa
-" Ignore warnings from untitled buffers
-au FocusLost * silent! wa
-" Switch between buffers without saving
-set hidden
-" Write the old file out when switching between files.
-set autowrite
+set backspace=indent,eol,start " Backspace for dummies
+au FocusLost * :wa " Save when focus lost
+au FocusLost * silent! wa " Ignore warnings from untitled buffers
+set hidden " Switch between buffers without saving
+set autowrite " Write the old file out when switching between files.
 set ttyfast
-" Session settings
-set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help
+set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help " Session settings
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 
 " ----------------------------------------------------------------------------
 "  Status Line
 " ----------------------------------------------------------------------------
-" enable status line
-set laststatus=2
+set laststatus=2 " Enable status line
 set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
-" Shortcut for NERDTreeToggld
-nmap <leader>nt :NERDTreeToggle <CR>
+nmap <leader>nt :NERDTreeToggle <CR> " Shortcut for NERDTreeToggld
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr','\.DS_Store']
-let NERDTreeChDirMode=1
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr', '\.git', '\.DS_Store']
+let NERDTreeChDirMode=0
 let NERDTreeMouseMode=3
-" autopen NERDTree and focus cursor in new document
+let NERDTreeQuitOnOpen=1
+let NERDTreeKeepTreeInNewTab=1
+" Autopen NERDTree and focus cursor in new document
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 " ----------------------------------------------------------------------------
 "  Syntastic
 " ----------------------------------------------------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 highlight SyntasticErrorSign guifg=white guibg=red
 highlight SyntasticErrorLine guibg=#2f0000
 let g:syntastic_check_on_open=1
@@ -79,12 +80,12 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 let g:tagbar_type_markdown = {
-	\ 'ctagstype' : 'markdown',
-	\ 'kinds' : [
-		\ 'h:Heading_L1',
-		\ 'i:Heading_L2',
-		\ 'k:Heading_L3'
-	\ ]
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
 \ }
 let g:tagbar_type_puppet = {
     \ 'ctagstype': 'puppet',
@@ -109,8 +110,7 @@ let g:tagbar_type_ruby = {
 " ----------------------------------------------------------------------------
 "  Zencoding
 " ----------------------------------------------------------------------------
-" Change zen coding leader key to Ctrl + e
-let g:user_zen_expandabbr_key = '<C-e>'
+let g:user_zen_expandabbr_key = '<C-e>' " Change zen coding leader key to Ctrl + e
 
 " ----------------------------------------------------------------------------
 "  GitGutter
@@ -127,62 +127,44 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " ----------------------------------------------------------------------------
-"  Backups
-" ----------------------------------------------------------------------------
-" do not keep backups after close
-set nobackup
-" do not keep a backup while working
-set nowritebackup
-" don't keep swp files either
-set noswapfile
-
-" ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
-"Tabs Space
-set ts=4
+set ts=4 " Tabs Space
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-"indent blocks of text 4 spaces
-set shiftwidth=4
-"indent blocks of text 4 spaces
-set tabstop=4
+set shiftwidth=4 " Indent blocks of text 4 spaces
+set tabstop=4 " Indent blocks of text 4 spaces
 set expandtab
-set softtabstop=4 " makes the spaces feel like real tabs
+set softtabstop=4 " Makes the spaces feel like real tabs
 
 " ----------------------------------------------------------------------------
 "  GUI
 " ----------------------------------------------------------------------------
-" set default theme
-colorscheme desert
-" set default font, font-size (mac)
-set guifont=Monaco:h10
+set showcmd " This shows what you are typing as a command.
+set showmode
+set virtualedit=onemore " Allow for cursor beyond last character
+colorscheme desert " Set default theme
+set guifont=Monaco:h10 " Set default font, font-size (mac)
 set splitbelow
 set splitright
 set cursorline
-" Show matching brackets.
-set showmatch
-" Bracket blinking.
-set mat=5
-" Set the amount of tabs open at any given time.
-set tabpagemax=5
-" Syntax highlighting on
-syntax on
-" RegEx Do The Damn Thing
-set magic
-" line numbers on
-set number
-" Display current cursor position in lower right corner.
-set ruler
-" Windows can be 0 line high
-set winminheight=0
-" Hide mouse when typing
-set mousehide 
-" Hide MacVim toolbar by default
-set go-=T
-" Prefer a slightly higher line height
-set linespace=3 
-set nolist
+set showmatch "Show matching brackets/parenthesis
+set mat=5 " Bracket blinking.
+set tabpagemax=5 " Set the amount of tabs open at any given time.
+syntax on " Syntax highlighting on
+set magic " RegEx Do The Damn Thing
+set number " Uine numbers on
+set ruler " Display current cursor position in lower right corner.
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+set winminheight=0 " Windows can be 0 line high
+set mousehide " Hide mouse when typing 
+set mouse=a " Automatically enable mouse usage
+set go-=T " Hide MacVim toolbar by default
+set linespace=3 " Prefer a slightly higher line height
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+set scrolljump=5 " Lines to scroll when cursor leaves screen
+set scrolloff=3 " Minimum lines to keep above and below cursor
 " Jump to last cursor position when editing a file
 " Don't do it when position is invalid or when inside an event handler
 autocmd BufReadPost *
@@ -193,12 +175,12 @@ autocmd BufReadPost *
 " ----------------------------------------------------------------------------
 "  Search
 " ----------------------------------------------------------------------------
-set showmatch "show matching brackets/parenthesis
 set incsearch "Find as you type search
-set ignorecase "case insensitive search
-set smartcase "case sensitive when uc present
+set ignorecase "Case insensitive search
+set smartcase "Case sensitive when uc present
 set hlsearch "Highlight searching
 set spell
+set gdefault " The /g flag on :s substitutions by default
 " Wildmenu autocompletion
 if has("wildmenu")
     set wildmenu
@@ -211,16 +193,18 @@ if has("wildmenu")
 endif
 
 " ----------------------------------------------------------------------------
-"  History
+"  History and Backups
 " ----------------------------------------------------------------------------
-set undolevels=10000
+set nobackup " Do not keep backups after close
+set nowritebackup " Do not keep a backup while working
+set noswapfile " Don't keep swp files either
+set undolevels=1000
+set history=1000
 if has('persistent_undo')
     set undodir=~/.vim/undo
     set undofile
     set undoreload=10000
 endif
-
-set history=50
 
 " ----------------------------------------------------------------------------
 "  Formatting
@@ -235,21 +219,16 @@ set formatoptions=qrnl
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
-" Read files from buffers, tag fields and dictionary for completion
-set complete=.,w,b,u,],i,k
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby
+set complete=.,w,b,u,],i,k " Read files from buffers, tag fields and dictionary for completion
+au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby " Thorfile, Rakefile and Gemfile are Ruby
 autocmd FileType text setlocal textwidth=78
-" Markdown files end in .md
-au BufRead,BufNewFile *.md set filetype=markdown
-" Enable spellchecking for Markdown
-au BufRead,BufNewFile *.md setlocal spell
-" Automatically wrap at 80 characters for Markdown
-au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.md set filetype=markdown " Markdown files end in .md
+au BufRead,BufNewFile *.md setlocal spell " Enable spellchecking for Markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80 " Automatically wrap at 80 characters for Markdown
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
+let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
+autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " ----------------------------------------------------------------------------
 "  Folding
@@ -262,8 +241,8 @@ if has('folding')
     set foldnestmax=10
     set foldlevelstart=99
     set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
-    "Shortcut to fold tags with leader (usually \) + ft
-    nnoremap <leader>ft Vatzf
+    " Shortcut to fold tags with leader (usually \) + ft
+    nnoremap <leader>ft Vatzf 
     highlight Folded guibg=grey guifg=blue
     highlight FoldColumn guibg=darkgrey guifg=white
 endif
@@ -271,8 +250,7 @@ endif
 " ----------------------------------------------------------------------------
 "  Conveniences
 " ----------------------------------------------------------------------------
-" Reassign map leader key
-let mapleader=","
+let mapleader="," " Reassign map leader key
 " Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
 " Walking through windows and make them full screen at the same time
