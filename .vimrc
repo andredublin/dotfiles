@@ -47,7 +47,7 @@ set statusline+=%*
 " ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
-nmap <leader>nt :NERDTreeToggle <CR> " Shortcut for NERDTreeToggld
+map <leader>d :execute 'NERDTreeToggle' . getcwd()<CR>      " Shortcut for NERDTreeToggle
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -92,7 +92,7 @@ let g:tagbar_type_puppet = {
     \ 'kinds': [
         \'c:class',
         \'s:site',
-        \'n:node',
+        \'n:nodn',
         \'d:definition'
     \ ]
 \ }
