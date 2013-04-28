@@ -47,14 +47,14 @@ set statusline+=%*
 " ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
-map <leader>d :execute 'NERDTreeToggle' . getcwd()<CR>      " Shortcut for NERDTreeToggle
+nmap tr :NERDTreeToggle<CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr', '\.git', '\.DS_Store']
 let NERDTreeChDirMode=0
 let NERDTreeMouseMode=3
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDTreeKeepTreeInNewTab=1
 " Autopen NERDTree and focus cursor in new document
 autocmd VimEnter * NERDTree
@@ -256,11 +256,6 @@ endif
 let mapleader="," " Reassign map leader key
 " Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
-" Walking through windows and make them full screen at the same time
-map <Up> <c-w>k<c-w>_<c-w><Bar>
-map <Down> <c-w>j<c-w>_<c-w><Bar>
-map <Left> <c-w>h<c-w>_<c-w><Bar>
-map <Right> <c-w>l<c-w>_<c-w><Bar>
 " Shortcut to my vimrc file
 nmap <leader>ev :tabedit $MYVIMRC<cr>
 " Map directorys
@@ -279,13 +274,10 @@ imap jj <esc>
 " Delete all buffers
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
 " easier window navigation
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-" Shortcut to opening a virtual split to right of current pane
-" Makes more sense than opening to the left
-nmap <leader>bv :bel vsp
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 " No more stretching for navigating files
 noremap h j
 noremap j h
