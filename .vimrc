@@ -245,7 +245,7 @@ if has('folding')
     set foldlevelstart=99
     set foldtext=strpart(getline(v:foldstart),0,50).'\ ...\ '.substitute(getline(v:foldend),'^[\ #]*','','g').'\ '
     " Shortcut to fold tags with leader (usually \) + ft
-    nnoremap <leader>ft Vatzf 
+    nnoremap <leader>ft Vatzf
     highlight Folded guibg=grey guifg=blue
     highlight FoldColumn guibg=darkgrey guifg=white
 endif
