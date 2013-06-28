@@ -40,7 +40,6 @@ Bundle 'AutoTag'
 Bundle 'AutoClose'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'mattn/zencoding-vim'
-Bundle 'ervandew/supertab'
 
 " Utilities
 Bundle 'airblade/vim-gitgutter'
