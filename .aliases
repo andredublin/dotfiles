@@ -49,6 +49,12 @@ alias lm='ls -al | more'   # pipe through more
 alias glx='ls -lb | grep'  # sort by extension and regex search'
 alias gps='ps -A | grep'   # list processes and regex search'
 
+# tmux usage
+alias tn='tmux new -s'
+alias ta='tmux attach -t'
+alias tk='tmux kill-session -t'
+alias tls='tmux ls'
+
 # Enhance WHOIS lookups
 alias whois='whois -h whois-servers.net'
 
