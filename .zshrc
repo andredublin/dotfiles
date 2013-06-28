@@ -8,7 +8,7 @@ ZSH_THEME="andre"
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git github zsh-syntax-highlighting)
+plugins=(git github vi-mode vagrant heroku rails4 rake zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,14 +21,22 @@ fi
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PATH="$PATH:/usr/local/sbin"
+#export PATH="$PATH:/usr/local/sbin"
 
-# use vim as visual editor
-export VISUAL=vim
-export EDITOR=$VISUAL
+if [[ "$COLORTERM" == 'gnome-terminal' ]]; then
+    export TERM="xtrem-256color"
+fi
+
+# vim forever!
+export EDITOR="vim"
+
+export GIT_MERGE_AUTOEDIT=no
 
 # try to correct command line spelling
 setopt CORRECT CORRECT_ALL
 
 # ignore duplicate history
 setopt histignoredups
+
+# don't share history
+unsetopt share_history
