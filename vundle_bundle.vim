@@ -1,34 +1,55 @@
 " ---------------------------------------------
 "  Vundle Settings
 "  --------------------------------------------
-set nocompatible 
-filetype off 
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'mattn/zencoding-vim'
-Bundle 'tpope/vim-surround'
+" Languages
 Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-rbenv'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-cucumber'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'pangloss/vim-javascript'
+Bundle 'kchmck/vim-coffee-script'
+
+" Navigation
 Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+
+" Colors
+Bundle 'vim-scripts/CycleColor'
+Bundle 'flazz/vim-colorschemes'
+
+" UI
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
 Bundle 'MatchTag'
 Bundle 'AutoTag'
 Bundle 'AutoClose'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'vim-scripts/CycleColor'
-Bundle 'mileszs/ack.vim'
+Bundle 'mattn/zencoding-vim'
+Bundle 'ervandew/supertab'
+
+" Utilities
 Bundle 'airblade/vim-gitgutter'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-rbenv'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-dispatch'
+Bundle 'skalnik/vim-vroom'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
