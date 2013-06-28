@@ -23,10 +23,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #export PATH="$PATH:/usr/local/sbin"
 
-if [[ "$COLORTERM" == 'gnome-terminal' ]]; then
-    export TERM="xtrem-256color"
-fi
-
 # vim forever!
 export EDITOR="vim"
 
