@@ -57,4 +57,4 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias myip='ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\   -f2'
 
 # Flush Directory Service cache
-alias flush='dscacheutil -flushcache'
+alias flush='dscacheutil -flushcache;sudo killall -HUP mDNSResponder'
