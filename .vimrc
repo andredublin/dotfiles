@@ -264,7 +264,7 @@ nmap <leader>s :cd ~/Sites<cr>:e.<cr>
 nmap <leader>h :cd ~/<cr>:e.<cr>
 " Saves time
 nmap <space> :
-" Automatcially change current directory to that of the file in the buffer
+" Automatically change current directory to that of the file in the buffer
 autocmd BufEnter * cd %:p:h
 " Change working directory to that of the current file
 cmap cwd lcd %:p:h
