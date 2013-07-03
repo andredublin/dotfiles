@@ -129,13 +129,13 @@ let g:ctrlp_cmd = 'CtrlP'
 " ----------------------------------------------------------------------------
 " Tabs
 " ----------------------------------------------------------------------------
-set ts=4 " Tabs Space
+set ts=2 " Tabs Space
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
-set shiftwidth=4 " Indent blocks of text 4 spaces
-set tabstop=4 " Indent blocks of text 4 spaces
+set shiftwidth=2 " Indent blocks of text 4 spaces
+set tabstop=2 " Indent blocks of text 4 spaces
 set expandtab
-set softtabstop=4 " Makes the spaces feel like real tabs
+set softtabstop=2 " Makes the spaces feel like real tabs
 
 " ----------------------------------------------------------------------------
 "  GUI
