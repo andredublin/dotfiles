@@ -2,7 +2,7 @@
 set nocompatible
 
 " ----------------------------------------------------------------------------
-"  Save | Reload VIM
+"  Save | Reload VIMRC
 " ----------------------------------------------------------------------------
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
@@ -31,9 +31,11 @@ au FocusLost * :wa " Save when focus lost
 au FocusLost * silent! wa " Ignore warnings from untitled buffers
 set hidden " Switch between buffers without saving
 set autowrite " Write the old file out when switching between files.
-set ttyfast
+set autoread " Auto-reload buffers when file changed on disk
+set updatecount=0 " Disable swap files
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help " Session settings
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set backupskip="/tmp/*,/private/tmp/*" " Make Vim able to edit crontab files
 
 " ----------------------------------------------------------------------------
 "  Status Line
@@ -156,7 +158,7 @@ set mat=5 " Bracket blinking.
 set tabpagemax=5 " Set the amount of tabs open at any given time.
 syntax on " Syntax highlighting on
 set magic " RegEx Do The Damn Thing
-set number " Uine numbers on
+set number " Line numbers on
 set ruler " Display current cursor position in lower right corner.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set winminheight=0 " Windows can be 0 line high
@@ -168,12 +170,20 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
 set scrolljump=5 " Lines to scroll when cursor leaves screen
 set scrolloff=3 " Minimum lines to keep above and below cursor
+set sidescroll=5 " Minimum number of columns to scoll horizontally
+set shell=bash " Avoids some problems with zsh
+let g:is_bash=1 " Default shell syntax
 " Jump to last cursor position when editing a file
 " Don't do it when position is invalid or when inside an event handler
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \   exe "normal g`\"" |
             \ endif
+" Make terminal Vim work sanely
+set notimeout
+set ttimeout
+set ttimeoutlen=100
+set ttyfast
 
 " ----------------------------------------------------------------------------
 "  Search
@@ -193,6 +203,9 @@ if has("wildmenu")
     set wildignore+=.DS_Store,.git,.hg,.svn
     set wildignore+=*~,*.swp,*.tmp
     set wildignore+=vendor,log,gems,.bundle,Gemfile.lock,.gem,data\/mongodb
+    set wildignore+=tmp/**,*.scssc,*.sassc
+    set wildignore+=bundle/**,vendor/bundle/**,vendor/cache/**
+    set wildignore+=node_modules/**
 endif
 
 " ----------------------------------------------------------------------------
@@ -218,6 +231,7 @@ set autoindent
 " Better line wrapping
 set wrap
 set formatoptions=qrnl
+set formatoptions+=j " Delete comment char when joining commented lines
 " Encoding
 set encoding=utf-8
 set termencoding=utf-8
@@ -225,11 +239,12 @@ set fileencoding=utf-8
 set complete=.,w,b,u,],i,k " Read files from buffers, tag fields and dictionary for completion
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru,Guardfile} set ft=ruby " Thorfile, Rakefile and Gemfile are Ruby
 autocmd FileType text setlocal textwidth=78
-au BufRead,BufNewFile *.md set filetype=markdown " Markdown files end in .md
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown " Markdown files
 au BufRead,BufNewFile *.md setlocal spell " Enable spellchecking for Markdown
 au BufRead,BufNewFile *.md setlocal textwidth=80 " Automatically wrap at 80 characters for Markdown
-au BufRead,BufNewFile *.scss set filetype=scss
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+au BufRead,BufNewFile *.scss setf scss
+au BufRead,BufNewFile jquery.*.js setf javascript syntax=jquery
+au BufRead,BufNewFile *.json setf javascript " Treat JSON files like javascript
 let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
