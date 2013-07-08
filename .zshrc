@@ -21,8 +21,10 @@ fi
 export RBENV_ROOT=/usr/local/var/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-# append sben for homebrew
+# append sbin for homebrew
 export PATH="$PATH:/usr/local/sbin"
+# append npm
+export PATH="$PATH:/usr/local/share/npm/bin"
 
 # vim forever!
 export EDITOR="vim"
