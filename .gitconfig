@@ -4,7 +4,7 @@
 [apply]
     whitespace = nowarn
 [github]
-    user = dublinan
+    user = andredublin
     token = editme
 [color]
     ui = auto
@@ -37,7 +37,7 @@
     fa = fetch --all
     st = status -vb
     hist = log --pretty=format:\"%h %ad | %s%d [%cn]\" -p -2 --graph --date=short
-    remote = remote --verbose
+    rv = remote --verbose
     br = branch -a
     bv = branch -avv
     bd = branch -D
