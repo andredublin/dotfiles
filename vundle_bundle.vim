@@ -19,6 +19,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'gcmt/go.vim.enhanced'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
