@@ -47,7 +47,6 @@ alias lu='ls -lur'         # sort by access time
 alias lt='ls -ltr'         # sort by date
 alias lm='ls -al | more'   # pipe through more
 alias glx='ls -lb | grep'  # sort by extension and regex search'
-alias gps='ps -A | grep'   # list processes and regex search'
 
 # tmux usage
 alias tn='tmux new -s'
