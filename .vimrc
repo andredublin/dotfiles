@@ -88,7 +88,6 @@ let g:user_zen_expandabbr_key = '<C-e>' " Change zen coding leader key to Ctrl +
 let g:gitgutter_enabled = 1
 let g:gitgutter_on_bufenter = 0
 let g:gitgutter_all_on_focusgained = 0
-let g:gitgutter_all_on_focusgained = 0
 
 " ----------------------------------------------------------------------------
 "  CtrlP
