@@ -36,20 +36,12 @@ set updatecount=0 " Disable swap files
 set sessionoptions=resize,winpos,winsize,buffers,tabpages,folds,curdir,help " Session settings
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
 set backupskip="/tmp/*,/private/tmp/*" " Make Vim able to edit crontab files
-
-" ----------------------------------------------------------------------------
-"  Status Line
-" ----------------------------------------------------------------------------
-set laststatus=2 " Enable status line
-set statusline=%t\ %y\ format:\ %{&ff};\ [%c,%l]
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set clipboard=unnamed " Use the OS clipboard by default
 
 " ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
-nmap tr :NERDTreeToggle<CR>
+nmap nt :NERDTreeToggle<CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -118,6 +110,12 @@ let g:gitgutter_all_on_focusgained = 0
 " ----------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+" ----------------------------------------------------------------------------
+"  Vroom
+" ----------------------------------------------------------------------------
+let g:vroom_write_all = 1 " Write all tests before running
+let g:vroom_use_bundle_exec = 1 " Run tests in tmux pane
 
 " ----------------------------------------------------------------------------
 " Tabs

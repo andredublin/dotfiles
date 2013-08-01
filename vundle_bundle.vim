@@ -41,6 +41,7 @@ Bundle 'AutoTag'
 Bundle 'AutoClose'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'mattn/zencoding-vim'
+Bundle 'bling/vim-airline'
 
 " Utilities
 Bundle 'airblade/vim-gitgutter'
