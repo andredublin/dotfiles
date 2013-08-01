@@ -89,15 +89,6 @@ let g:tagbar_type_markdown = {
         \ 'k:Heading_L3'
     \ ]
 \ }
-let g:tagbar_type_puppet = {
-    \ 'ctagstype': 'puppet',
-    \ 'kinds': [
-        \'c:class',
-        \'s:site',
-        \'n:nodn',
-        \'d:definition'
-    \ ]
-\ }
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
         \ 'm:modules',
