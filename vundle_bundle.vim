@@ -53,5 +53,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'skalnik/vim-vroom'
 Bundle 'godlygeek/tabular'
+Bundle 'mattn/webapi-vim'
 
 filetype plugin indent on
