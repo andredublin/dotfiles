@@ -17,6 +17,9 @@ if [ -e "$HOME/.aliases" ]; then
   source  "$HOME/.aliases"
 fi
 
+# Source autoenv
+source /usr/local/opt/autoenv/activate.sh
+
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
 if
@@ -28,8 +31,6 @@ fi
 export PATH="$PATH:/usr/local/sbin"
 # append npm binaries
 export PATH="$PATH:/usr/local/share/npm/bin"
-# append gopath binaries
-export PATH="$PATH:$GOPATH/bin"
 
 # vim forever!
 export EDITOR="vim"
