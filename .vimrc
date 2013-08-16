@@ -78,9 +78,9 @@ if filereadable(expand("$HOME/.vim/ctags.vim"))
 endif
 
 " ----------------------------------------------------------------------------
-"  Zencoding
+"  Emmet
 " ----------------------------------------------------------------------------
-let g:user_zen_expandabbr_key = '<C-e>' " Change zen coding leader key to Ctrl + e
+let g:user_emmet_leader_key = '<C-e>' " Change emmet coding leader key to Ctrl + e
 
 " ----------------------------------------------------------------------------
 "  GitGutter

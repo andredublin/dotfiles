@@ -21,6 +21,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'klen/python-mode'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
@@ -41,7 +42,7 @@ Bundle 'MatchTag'
 Bundle 'AutoTag'
 Bundle 'AutoClose'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-airline'
 
 " Utilities
