@@ -8,7 +8,7 @@ ZSH_THEME="andre"
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(git github vi-mode vagrant heroku rails4 rake zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting docker)
 
 source $ZSH/oh-my-zsh.sh
 

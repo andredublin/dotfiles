@@ -39,6 +39,11 @@ set backupskip="/tmp/*,/private/tmp/*" " Make Vim able to edit crontab files
 set clipboard=unnamed " Use the OS clipboard by default
 
 " ----------------------------------------------------------------------------
+"  Vundle
+" ----------------------------------------------------------------------------
+let g:vundle_default_git_proto = 'git'
+
+" ----------------------------------------------------------------------------
 "  NERDTree
 " ----------------------------------------------------------------------------
 nmap nt :NERDTreeToggle<CR>
