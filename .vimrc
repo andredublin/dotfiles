@@ -16,6 +16,11 @@ if filereadable(expand("$HOME/.vim/vundle_bundle.vim"))
 endif
 
 " ----------------------------------------------------------------------------
+"  Golang Plugins
+" ----------------------------------------------------------------------------
+set runtimepath+=$GOROOT/misc/vim
+
+" ----------------------------------------------------------------------------
 " Windows Compatibility
 "  ----------------------------------------------------------------------------
 if has('win32') || has('win64')
@@ -27,6 +32,8 @@ endif
 " ----------------------------------------------------------------------------
 set timeoutlen=500
 set backspace=indent,eol,start " Backspace for dummies
+set modelines=0 " dont need modelines and the potential security hazard
+fixdel
 au FocusLost * :wa " Save when focus lost
 au FocusLost * silent! wa " Ignore warnings from untitled buffers
 set hidden " Switch between buffers without saving
@@ -115,7 +122,9 @@ set whichwrap+=<,>,h,l
 set shiftwidth=2 " Indent blocks of text 4 spaces
 set tabstop=2 " Indent blocks of text 4 spaces
 set expandtab
+set shiftround " Use multiple of shiftwidth when indenting with '<' and '>'
 set softtabstop=2 " Makes the spaces feel like real tabs
+set smarttab  " Insert tab on the start of a line according to shiftwidth
 
 " ----------------------------------------------------------------------------
 "  GUI
@@ -162,6 +171,12 @@ set notimeout
 set ttimeout
 set ttimeoutlen=100
 set ttyfast
+if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
+  set t_Co=256 " Set term color support
+endif
+set grepprg=ack " Use ACK for grepping
+set grepformat=%f:%l:%m
+set laststatus=2 " Status line
 
 " ----------------------------------------------------------------------------
 "  Search
@@ -191,13 +206,14 @@ endif
 " ----------------------------------------------------------------------------
 set nobackup " Do not keep backups after close
 set nowritebackup " Do not keep a backup while working
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp " Store swap files here
 set noswapfile " Don't keep swp files either
-set undolevels=1000
-set history=1000
+set undolevels=100
+set history=100
 if has('persistent_undo')
     set undodir=~/.vim/undo
     set undofile
-    set undoreload=10000
+    set undoreload=100
 endif
 
 " ----------------------------------------------------------------------------
@@ -206,6 +222,7 @@ endif
 " Indent Stuff
 set smartindent
 set autoindent
+set copyindent
 " Better line wrapping
 set wrap
 set formatoptions=qrnl
@@ -225,13 +242,14 @@ au BufRead,BufNewFile jquery.*.js setf javascript syntax=jquery
 au BufRead,BufNewFile *.json setf javascript " Treat JSON files like javascript
 let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " ----------------------------------------------------------------------------
 "  Folding
 " ----------------------------------------------------------------------------
 if has('folding')
     set foldmethod=indent
-    set foldenable
+    set nofoldenable
     set foldcolumn=1
     set foldlevel=1
     set foldnestmax=10
@@ -277,3 +295,8 @@ noremap j h
 noremap k gj
 noremap l gk
 noremap ; l
+" Make regexp search not suck by default
+nnoremap / /\v
+vnoremap / /\v
+" Allow saving a sudo file if forgot to open as sudo
+cmap w!! w !sudo tee % >/dev/null

@@ -20,8 +20,8 @@ Bundle 'tpope/vim-rake'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'jnwhiteh/vim-golang'
 Bundle 'klen/python-mode'
+Bundle 'Blackrush/vim-gocode'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'

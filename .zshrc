@@ -8,7 +8,7 @@ ZSH_THEME="andre"
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(zsh-syntax-highlighting docker)
+plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,6 +31,8 @@ fi
 export PATH="$PATH:/usr/local/sbin"
 # append npm binaries
 export PATH="$PATH:/usr/local/share/npm/bin"
+# append packer binaries
+export PATH="$PATH:/usr/local/packer"
 
 # vim forever!
 export EDITOR="vim"
