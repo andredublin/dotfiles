@@ -39,6 +39,7 @@ alias repl='~/repl'
 alias sub='subl . &'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias env='autoenv_init'
+alias julia='/Applications/Julia-0.2.0.app/Contents/Resources/julia/bin/julia'
 
 # Listing stuff
 alias ll='ls -Al'          # show hidden files
