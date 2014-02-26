@@ -57,7 +57,7 @@ nmap nt :NERDTreeToggle<CR>
 " NERDTree Settings
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr', '\.git', '\.DS_Store']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr', '\.git', '\.DS_Store', '\.class']
 let NERDTreeChDirMode=0
 let NERDTreeMouseMode=3
 let NERDTreeQuitOnOpen=0
