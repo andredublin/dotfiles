@@ -49,6 +49,7 @@
     tag = tag -a
     add = add -u
     squish = rebase -i @{u}
+    gr = grep --break --heading --line-number # output grep like ack
 [format]
     pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 [core]
@@ -65,4 +66,6 @@
     rebase = true
 [mergetool]
     keepBackup = true
-
+[grep]
+    lineNumber = true
+    extendRegexp = true
