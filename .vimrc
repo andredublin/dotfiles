@@ -91,6 +91,8 @@ let g:syntastic_php_checkers = ['php']
 " ----------------------------------------------------------------------------
 nnoremap <silent> <F9> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
+let g:tagbar_show_linenumbers = 2
+let g:tagbar_singleclick = 1
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 if filereadable(expand("$HOME/.vim/ctags.vim"))
     source $HOME/.vim/ctags.vim
