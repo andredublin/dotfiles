@@ -116,6 +116,7 @@ let g:gitgutter_all_on_focusgained = 0
 " ----------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_open_new_file = 't' " Open file in new tab
 
 " ----------------------------------------------------------------------------
 "  Vroom
@@ -201,9 +202,10 @@ set gdefault " The /g flag on :s substitutions by default
 if has("wildmenu")
     set wildmenu
     set wildmode=list:longest,full
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*        " Linux/MacOSX
+    set wildignore+=*\\.git\\*,*\\.hg\\*,*\\.svn\\*  " Windows ('noshellslash')
     set wildignore+=*.a,*.o
     set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
-    set wildignore+=.DS_Store,.git,.hg,.svn
     set wildignore+=*~,*.swp,*.tmp
     set wildignore+=vendor,log,gems,.bundle,Gemfile.lock,.gem,data\/mongodb
     set wildignore+=tmp/**,*.scssc,*.sassc
