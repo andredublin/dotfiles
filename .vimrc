@@ -286,6 +286,7 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>d :cd ~/Desktop<cr>:e.<cr>
 nmap <leader>s :cd ~/Sites<cr>:e.<cr>
 nmap <leader>h :cd ~/<cr>:e.<cr>
+nmap <leader>r :cd /<cr>:e.<cr>
 " Saves time
 nmap <space> :
 " Automatically change current directory to that of the file in the buffer
