@@ -58,12 +58,12 @@ nmap nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.hg', '\.svn', '\.bzr', '\.git', '\.DS_Store', '\.class']
-let NERDTreeChDirMode=0
+let NERDTreeChDirMode=2
 let NERDTreeMouseMode=3
 let NERDTreeQuitOnOpen=0
 let NERDTreeKeepTreeInNewTab=1
 " Autopen NERDTree and focus cursor in new document
-autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree /Users/dublinan/Sites
 autocmd VimEnter * wincmd p
 
 " ----------------------------------------------------------------------------
