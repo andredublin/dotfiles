@@ -123,6 +123,7 @@ let g:ctrlp_open_new_file = 't' " Open file in new tab
 " ----------------------------------------------------------------------------
 let g:vroom_write_all = 1 " Write all tests before running
 let g:vroom_use_bundle_exec = 1 " Run tests in tmux pane
+let g:vroom_use_colors = 1 " ROYGBIV yall!
 
 " ----------------------------------------------------------------------------
 " Tabs
