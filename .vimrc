@@ -76,8 +76,15 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'active' }
-let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_mode_map={ 'mode': 'active' }
+let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_chef_checkers = ['foodcritic']
+let g:syntastic_ruby_checkers = ['mri', 'rubylint']
+let g:syntastic_go_checkers = ['go']
+let g:syntastic_sass_checkers = ['sass']
+let g:syntastic_php_checkers = ['php']
 
 " ----------------------------------------------------------------------------
 "  Tagbar
