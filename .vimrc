@@ -102,6 +102,7 @@ endif
 "  Emmet
 " ----------------------------------------------------------------------------
 let g:user_emmet_leader_key = '<C-e>' " Change emmet coding leader key to Ctrl + e
+let g:use_emmet_complete_tag = 1
 
 " ----------------------------------------------------------------------------
 "  GitGutter
