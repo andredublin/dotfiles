@@ -63,7 +63,7 @@ let NERDTreeMouseMode=3
 let NERDTreeQuitOnOpen=0
 let NERDTreeKeepTreeInNewTab=1
 " Autopen NERDTree and focus cursor in new document
-autocmd VimEnter * NERDTree /Users/dublinan/Sites
+autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 
 " ----------------------------------------------------------------------------
