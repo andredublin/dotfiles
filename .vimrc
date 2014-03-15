@@ -72,10 +72,15 @@ autocmd VimEnter * wincmd p
 autocmd FileType javascript nnoremap <buffer> <leader>bf :call JsBeautify()<cr>
 autocmd FileType html nnoremap <buffer> <leader>bf :call HtmlBeautify()<cr>
 autocmd FileType css nnoremap <buffer> <leader>bf :call CSSBeautify()<cr>
-" For selected lines
+" Visual mode
 autocmd FileType javascript vnoremap <buffer> <leader>bf :call RangeJsBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <leader>bf :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <leader>bf :call RangeCSSBeautify()<cr>
+
+" ----------------------------------------------------------------------------
+"  Vim-Javascript
+" ----------------------------------------------------------------------------
+let g:javascript_enable_domhtmlcss = 1
 
 " ----------------------------------------------------------------------------
 "  Syntastic
