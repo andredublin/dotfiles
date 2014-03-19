@@ -56,6 +56,7 @@
     excludesfile = ~/.gitignore_global
     quotepath = false
     editor = vim
+    autocrlf = input
 [push]
     # 'git push' should only do the current branch, not all
     default = current
