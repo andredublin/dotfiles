@@ -18,3 +18,5 @@ pickle-email-*.html
 .DS_Store
 .idea/*
 .env
+.Trashes
+Desktop.ini
