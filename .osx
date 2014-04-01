@@ -1,0 +1,110 @@
+####################
+# UI/UX            #
+####################
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apples.loginwindow AdminHostInfo HostName
+
+####################
+# Screen           #
+####################
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# Enable subpixel font rendering on non-Apple LCDS
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
+
+# Enable HiDPI display modes (requires restart)
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+
+##### Finder #####
+
+# Show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Show all file name extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Allow text selection in quick look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Search in current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Disalbe file extension warning
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Enable spring loading for directories
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+
+# Remove the spring loading delay for directories
+defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Disable the warning before emptying the trash
+defaults write con.apple.finder WarnOnEmptyTrash -bool false
+
+# Empty the trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+##### Dock, Dashboard, and hot corners #####
+
+# Don't animate opening apps from the Dock
+defaults write con.apple.dock launchanim -bool false
+
+# Speed up Mission control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+####################
+# Mail             #
+####################
+
+# Disable send and relay animations
+defaults write com.apple.mail DisableReplyAnimations -bool true
+defaults write com.apple.mail DisableSendAnimations -bool true
+
+# Copy email addresses as 'foo@bar.com' instead of 'Foo Bar <foo@bar.com>'
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+# Display emails in threaded mode, sorted by date (oldest at the top)
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
+defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "recieved-date"
+
+# Disable inline attachments (just show the icon)
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+
+######################
+# Terminal & iTerm 2 #
+######################
+
+# Only use UTF-8 in Terminal.app
+defaults write con.apple.terminal StringEncodings -array 4
+
+####################
+# Activity Monitor #
+####################
+
+# Visualize CPU usage in the Activity Monitor Dock icon
+defaults write com.apple.ActivityMonitor IconType -int 5
+
+####################
+# TextEdit         #
+####################
+
+# Use plain text mode for new documents
+defaults write com.apple.TextEdit RichText -int 0
+
+# Open and save files as UTF-8
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+deafults write com.apple.TextEdit PlainTextEncodingForWrite -int 4

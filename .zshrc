@@ -8,36 +8,15 @@ ZSH_THEME="andre"
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting, autoenv, bower, colorize, common-aliases, docker, go)
 
 source $ZSH/oh-my-zsh.sh
 
-# Source .aliases
-if [ -e "$HOME/.aliases" ]; then
-  source  "$HOME/.aliases"
-fi
-
-# Source autoenv
-source /usr/local/opt/autoenv/activate.sh
-
-# rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
-if
-  which rbenv > /dev/null;
-  then eval "$(rbenv init -)";
-fi
-
-# append sbin for homebrew
-export PATH="$PATH:/usr/local/sbin"
-# append npm binaries
-export PATH="$PATH:/usr/local/share/npm/bin"
-# append packer binaries
-export PATH="$PATH:/usr/local/packer"
-
-# vim forever!
-export EDITOR="vim"
-
-export GIT_MERGE_AUTOEDIT=no
+# Load shell files
+for file in ~/.{aliases,functions,exports}; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file"
+done
+unset file
 
 # try to correct command line spelling
 setopt CORRECT CORRECT_ALL

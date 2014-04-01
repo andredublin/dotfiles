@@ -3,10 +3,6 @@ alias sites='cd ~/Sites/'
 alias desk='cd /Users/dublinan/Desktop'
 alias dl='cd /Users/dublinan/Downloads'
 alias home='cd ~'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 
 # FS
 alias mountkiz='mount -t smbfs //andre.dublin@kizcrews035/Users /Volumes/share/KIZ'
@@ -31,21 +27,12 @@ alias redis='redis-server /usr/local/etc/redis.conf'
 alias apstart='sudo apachectl -k start'
 alias apstop='sudo apachectl -k stop'
 alias aprestart='sudo apachectl -k graceful'
-alias zshconfig='vi ~/.zshrc'
 alias adb='/Applications/Android/platform-tools/adb'
 alias android='/Applications/Android/tools/android'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias env='autoenv_init'
 
 # Listing stuff
-alias ll='ls -Al'          # show hidden files
-alias lx='ls -lb'          # sort by extension
-alias lk='ls -lSr'         # sort by size
-alias lc='ls -lcr'         # sort by change time
-alias lu='ls -lur'         # sort by access time
-alias lt='ls -ltr'         # sort by date
-alias lm='ls -al | more'   # pipe through more
-alias glx='ls -lb | grep'  # sort by extension and regex search'
+alias glx='ls -lAFh | grep'  #long list, show almost all, show type, human readabl pipe regex search'
 
 # tmux usage
 alias tn='tmux new -s'
