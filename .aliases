@@ -13,7 +13,6 @@ alias mountkiz='mount -t smbfs //andre.dublin@kizcrews035/Users /Volumes/share/K
 
 # Shortcuts
 alias r='rails'
-alias v='vi'
 alias g='git'
 alias gk='gitk --all 2> /dev/null &'
 alias ex='exit'
