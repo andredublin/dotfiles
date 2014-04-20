@@ -55,7 +55,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write con.apple.finder WarnOnEmptyTrash -bool false
 
 # Empty the trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool true
+defaults write com.apple.finder EmptyTrashSecurely -bool false
 
 ##### Dock, Dashboard, and hot corners #####
 
