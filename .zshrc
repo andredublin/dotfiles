@@ -8,7 +8,7 @@ ZSH_THEME="andre"
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(zsh-syntax-highlighting, autoenv, bower, colorize, common-aliases, docker, go)
+plugins=(zsh-syntax-highlighting, autoenv, bower, colorize, common-aliases, docker)
 
 source $ZSH/oh-my-zsh.sh
 
