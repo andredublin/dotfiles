@@ -23,3 +23,6 @@ export PATH="$PATH:/usr/local/packer"
 export EDITOR="vim"
 
 export GIT_MERGE_AUTOEDIT=no
+
+# boot2docker
+export DOCKER_HOST=tcp://localhost:4243
