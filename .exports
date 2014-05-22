@@ -26,3 +26,6 @@ export GIT_MERGE_AUTOEDIT=no
 
 # boot2docker
 export DOCKER_HOST=tcp://localhost:4243
+
+# activate autoenv
+source /usr/local/opt/autoenv/activate.sh
