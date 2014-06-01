@@ -2,3 +2,19 @@
 function mkd() {
   mkdir -p "$@" && cd "$@"
 }
+
+# remove images
+function drmi() {
+  if [[ $# -eq 1 ]]; then
+    local query=$1
+  else
+    local query="<none>"
+  fi
+
+  docker rmi $(docker images | grep "^$query" | awk "{print $3}")
+}
+
+# remove containers
+function drmc() {
+  docker rm $(docker ps -a -q)
+}
