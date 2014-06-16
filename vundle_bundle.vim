@@ -21,7 +21,6 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'klen/python-mode'
-Bundle 'Blackrush/vim-gocode'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
