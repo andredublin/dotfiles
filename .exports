@@ -18,6 +18,8 @@ export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:/usr/local/share/npm/bin"
 # append packer binaries
 export PATH="$PATH:/usr/local/packer"
+# android tools
+export PATH="$PATH:/Applications/Android/sdk"
 
 # vim forever!
 export EDITOR="vim"
