@@ -31,5 +31,5 @@ unsetopt share_history
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # gopath
-export GOPATH="~/Sites/go_projects"
+export GOPATH="/Users/dublinan/Sites/go_projects"
 export PATH=$PATH:$GOPATH/bin
