@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=/usr/local/Cellar/go/1.3/libexec/misc/vim
 call vundle#rc()
 
 " Let Vundle manage Vundle
@@ -21,7 +22,6 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'klen/python-mode'
-Bundle 'fatih/vim-go'
 
 " Navigation
 Bundle 'scrooloose/nerdtree'
