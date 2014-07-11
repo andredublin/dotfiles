@@ -35,7 +35,7 @@
     undo = reset --soft HEAD^
     aa = add --all
     fa = fetch --all
-    fap = fecth --all -p
+    fap = fetch --all -p
     st = status -vb
     hist = log --pretty=format:\"%h %ad | %s%d [%cn]\" -p -2 --graph --date=short
     rv = remote --verbose
