@@ -26,10 +26,3 @@ setopt histignoredups
 
 # don't share history
 unsetopt share_history
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# gopath
-export GOPATH="/Users/dublinan/Sites/go_projects"
-export PATH=$PATH:$GOPATH/bin
