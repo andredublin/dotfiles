@@ -41,8 +41,8 @@ alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du --max-depth=1 -h'
 alias duf='du -sh *'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fd='sudo find . -type d -name'
+alias ff='sudo find . -type f -type l -name'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
