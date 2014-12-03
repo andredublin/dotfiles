@@ -15,14 +15,16 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# append sbin for homebrew
+# sbin for homebrew
 export PATH="$PATH:/usr/local/sbin"
-# append npm binaries
+# npm binaries
 export PATH="$PATH:/usr/local/share/npm/bin"
-# append packer binaries
+# packer binaries
 export PATH="$PATH:/usr/local/packer"
 # android tools
 export PATH="$PATH:/Applications/Android/sdk/tools"
+# dark tools
+export PATH="$PATH:/Applications/dart/dart-sdk/bin"
 
 # vim forever!
 export EDITOR="vim"
