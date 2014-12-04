@@ -46,6 +46,3 @@ export PATH=$PATH:$GOPATH/bin
 # This loads nvm
 export NVM_DIR="/Users/dublinan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
-
-# aspnet
-source kvm.sh

@@ -105,7 +105,6 @@ let g:syntastic_ruby_checkers = ['mri', 'rubylint']
 let g:syntastic_go_checkers = ['go']
 let g:syntastic_sass_checkers = ['sass']
 let g:syntastic_php_checkers = ['php']
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
 
 " ----------------------------------------------------------------------------
 "  Tagbar
@@ -145,48 +144,6 @@ let g:ctrlp_open_new_file = 't' " Open file in new tab
 let g:vroom_write_all = 1 " Write all tests before running
 let g:vroom_use_bundle_exec = 1 " Run tests in tmux pane
 let g:vroom_use_colors = 1 " ROYGBIV yall!
-
-" ----------------------------------------------------------------------------
-"  OmniSharp
-" ----------------------------------------------------------------------------
-let g:OmniSharp_timeout = 1 "Timeout in seconds to wait for a response from the server
-let g:OmniSharp_host = "http://localhost:2000" "This is the default value, setting it isn't actually necessary
-augroup omnisharp_commands
-    autocmd!
-
-    "Set autocomplete function to OmniSharp (if not using YouCompleteMe completion plugin)
-    autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
-
-    " Synchronous build (blocks Vim)
-    "autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuild<cr>
-    " Builds can also run asynchronously with vim-dispatch installed
-    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-    " automatic syntax check on events (TextChanged requires Vim 7.4)
-    autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
-
-    " Automatically add new cs files to the nearest project on save
-    autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-
-    "show type information automatically when the cursor stops moving
-    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-
-    "The following commands are contextual, based on the current cursor position.
-
-    autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
-    autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
-    autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
-    autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
-    autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
-    autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr> "finds members in the current buffer
-    " cursor can be anywhere on the line containing an issue 
-    autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>  
-    autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
-    autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
-    autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
-    autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr> "navigate up by method/property/field
-    autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr> "navigate down by method/property/field
-
-augroup END
 
 " ----------------------------------------------------------------------------
 " Tabs
