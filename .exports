@@ -40,7 +40,7 @@ export DOCKER_TLS_VERIFY=1
 source /usr/local/opt/autoenv/activate.sh
 
 # gopath
-export GOPATH="/Users/dublinan/Sites/go_projects"
+export GOPATH="/Users/dublinan/Sites/golang"
 export PATH=$PATH:$GOPATH/bin
 
 # This loads nvm
