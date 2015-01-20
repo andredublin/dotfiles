@@ -22,7 +22,7 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 # packer binaries
 export PATH="$PATH:/usr/local/packer"
 # android tools
-export PATH="$PATH:/Applications/Android/sdk/tools"
+export PATH="$PATH:/Applications/android/tools"
 # dark tools
 export PATH="$PATH:/Applications/dart/dart-sdk/bin"
 
