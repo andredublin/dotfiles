@@ -17,14 +17,16 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # sbin for homebrew
 export PATH="$PATH:/usr/local/sbin"
+
 # npm binaries
 export PATH="$PATH:/usr/local/share/npm/bin"
+
 # packer binaries
 export PATH="$PATH:/usr/local/packer"
+
 # android tools
-export PATH="$PATH:/Applications/android/tools"
-# dark tools
-export PATH="$PATH:/Applications/dart/dart-sdk/bin"
+export ANDROID_HOME="/Applications/android/"
+export PATH="$PATH:$ANDROID_HOME/tools"
 
 # vim forever!
 export EDITOR="vim"
@@ -49,3 +51,4 @@ export PATH=$PATH:$GOPATH/bin
 # This loads nvm
 export NVM_DIR="/Users/dublinan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
+
