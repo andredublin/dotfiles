@@ -5,7 +5,6 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=/usr/local/Cellar/go/1.3/libexec/misc/vim
 call vundle#rc()
 
 " Let Vundle manage Vundle
