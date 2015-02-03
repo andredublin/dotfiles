@@ -9,6 +9,11 @@
 --type-set=sass=.scss,sass
 --type-set=cucumber=.feature
 --type-set=markdown=.markdown,.md
+--type-set=go=.go
+--type-set=conf=.conf
+--type-set=python=.py,.mako
+--type-set=txt=.txt
+--type-set=cython=.pyx
 #
 --ignore-dir=vendor
 --ignore-dir=log
@@ -18,6 +23,7 @@
 --ignore-dir=fixtures
 --ignore-dir=script
 --ignore-dir=system
+--ignore-dir=build
 #
 --sort-files
 --color
