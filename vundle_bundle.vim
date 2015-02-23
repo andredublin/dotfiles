@@ -4,56 +4,58 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Languages
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-cucumber'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rake'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'klen/python-mode'
-Bundle 'faith/vim-go'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-cucumber'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rake'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'klen/python-mode'
+Plugin 'faith/vim-go'
+Plugin 'jdonaldson/vaxe'
 
 " Navigation
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
 
 " Colors
-Bundle 'vim-scripts/CycleColor'
-Bundle 'flazz/vim-colorschemes'
+Plugin 'vim-scripts/CycleColor'
+Plugin 'flazz/vim-colorschemes'
 
 " UI
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-Bundle 'MatchTag'
-Bundle 'AutoTag'
-Bundle 'AutoClose'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'mattn/emmet-vim'
-Bundle 'bling/vim-airline'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'MatchTag'
+Plugin 'AutoTag'
+Plugin 'AutoClose'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mattn/emmet-vim'
+Plugin 'bling/vim-airline'
 
 " Utilities
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mattn/gist-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-rbenv'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-dispatch'
-Bundle 'skalnik/vim-vroom'
-Bundle 'godlygeek/tabular'
-Bundle 'mattn/webapi-vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mattn/gist-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-dispatch'
+Plugin 'skalnik/vim-vroom'
+Plugin 'godlygeek/tabular'
+Plugin 'mattn/webapi-vim'
 
+call vundle#end()
 filetype plugin indent on
