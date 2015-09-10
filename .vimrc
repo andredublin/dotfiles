@@ -273,6 +273,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=80 " Automatically wrap at 80 char
 au BufRead,BufNewFile *.scss setf scss
 au BufRead,BufNewFile jquery.*.js setf javascript syntax=jquery
 au BufRead,BufNewFile *.json setf javascript " Treat JSON files like javascript
+au BufRead,BufNewFile *.es6 setf javascript " Treat es6 files like javascript
 let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags they are
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 

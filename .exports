@@ -25,8 +25,11 @@ export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH="$PATH:/usr/local/packer"
 
 # android tools
-export ANDROID_HOME="/Applications/android/"
+export ANDROID_HOME="/Applications/android"
 export PATH="$PATH:$ANDROID_HOME/tools"
+
+# java
+export PATH="$PATH:/Library/Java/Home"
 
 # vim forever!
 export EDITOR="vim"

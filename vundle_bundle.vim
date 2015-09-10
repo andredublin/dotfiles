@@ -23,6 +23,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'klen/python-mode'
 Plugin 'faith/vim-go'
 Plugin 'jdonaldson/vaxe'
+Plugin 'rust-lang/rust.vim'
 
 " Navigation
 Plugin 'scrooloose/nerdtree'
