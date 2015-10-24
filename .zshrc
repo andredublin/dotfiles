@@ -26,3 +26,6 @@ setopt histignoredups
 
 # don't share history
 unsetopt share_history
+
+# azure autocompletion
+. <(azure --completion)

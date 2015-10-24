@@ -7,9 +7,6 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
-# FS
-alias mountkiz='mount -t smbfs //andre.dublin@kizcrews035/Users /Volumes/share/KIZ'
-
 # Shortcuts
 alias g='git'
 alias gk='gitk --all 2> /dev/null &'
