@@ -29,3 +29,6 @@ unsetopt share_history
 
 # azure autocompletion
 . <(azure --completion)
+
+# dotnet corefx
+source dnvm.sh
