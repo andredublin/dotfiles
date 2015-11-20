@@ -30,5 +30,5 @@ unsetopt share_history
 # azure autocompletion
 . <(azure --completion)
 
-# dotnet corefx
-source dnvm.sh
+# dnvm
+source /usr/local/lib/dnx/bin/dnvm.sh
