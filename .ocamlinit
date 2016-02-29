@@ -9,3 +9,5 @@ let () =
 #camlp4o;;
 #require "core.top";;
 #require "ppx_jane";;
+
+open Core.Std
