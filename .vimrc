@@ -278,6 +278,14 @@ let g:html_indent_tags = 'li\|p' " Treat <li> and <p> tags like the block tags t
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " ----------------------------------------------------------------------------
+"  Haskell
+" ----------------------------------------------------------------------------
+au FileType haskell nnoremap <buffer> <Leader>ht :GhcModType<CR>
+au FileType haskell nnoremap <buffer> <Leader>hh :GhcModTypeClear<CR>
+au FileType haskell nnoremap <buffer> <Leader>hc :GhcModCheck<CR>
+au FileType haskell nnoremap <buffer> <Leader>hl :GhcModLint<CR>
+
+" ----------------------------------------------------------------------------
 "  Folding
 " ----------------------------------------------------------------------------
 if has('folding')

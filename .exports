@@ -48,7 +48,10 @@ source /usr/local/opt/autoenv/activate.sh
 export GOPATH="$HOME/Sites/golang"
 export PATH="$PATH:$GOPATH/bin"
 
-# This loads nvm
+# NVM
 export NVM_DIR="/Users/dublinan/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
+
+# Idris
+export PATH="$PATH:$HOME/Library/Haskell/bin"
 
