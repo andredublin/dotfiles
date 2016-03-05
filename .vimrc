@@ -175,7 +175,7 @@ set visualbell " Don't beep
 set showmatch "Show matching brackets/parenthesis
 set mat=5 " Bracket blinking.
 set tabpagemax=5 " Set the amount of tabs open at any given time.
-syntax on " Syntax highlighting on
+syntax enable " Syntax highlighting
 set magic " RegEx Do The Damn Thing
 set number " Line numbers on
 set ruler " Display current cursor position in lower right corner.
@@ -284,6 +284,17 @@ au FileType haskell nnoremap <buffer> <Leader>ht :GhcModType<CR>
 au FileType haskell nnoremap <buffer> <Leader>hh :GhcModTypeClear<CR>
 au FileType haskell nnoremap <buffer> <Leader>hc :GhcModCheck<CR>
 au FileType haskell nnoremap <buffer> <Leader>hl :GhcModLint<CR>
+
+" ----------------------------------------------------------------------------
+"  Ocaml
+" ----------------------------------------------------------------------------
+if executable('ocamlmerlin') && has('python')
+  let s:ocamlmerlin = substitute(system('opam config var share'), '\n$', '', '''') . "/ocamlmerlin"
+  execute "set rtp+=".s:ocamlmerlin."/vim"
+  execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
+endif
+
+autocmd FileType ocaml source substitute(system('opam config var share'), '\n$', '', '''') . "/typerex/ocp-indent/ocp-indent.vim"
 
 " ----------------------------------------------------------------------------
 "  Folding
